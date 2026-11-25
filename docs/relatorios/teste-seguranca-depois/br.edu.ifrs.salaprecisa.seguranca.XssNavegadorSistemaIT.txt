@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.836 s -- in br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT

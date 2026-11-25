@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SalaForm.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">salaprecisa</a> &gt; <a href="index.source.html" class="el_package">br.edu.ifrs.salaprecisa.web</a> &gt; <span class="el_source">SalaForm.java</span></div><h1>SalaForm.java</h1><pre class="source lang-java linenums">package br.edu.ifrs.salaprecisa.web;
+
+import br.edu.ifrs.salaprecisa.dominio.Sala;
+import br.edu.ifrs.salaprecisa.dominio.TipoSala;
+import br.edu.ifrs.salaprecisa.servico.SalaService;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+/**
+ * Objeto de formulário (tela) para cadastro e edição de sala.
+ *
+ * &lt;p&gt;É intencionalmente uma classe de dados: o Spring MVC preenche os campos pelos
+ * setters e o Thymeleaf os lê pelos getters (supressão justificada em docs/analise-estatica.md).&lt;/p&gt;
+ */
+@SuppressWarnings(&quot;PMD.DataClass&quot;)
+<span class="nc" id="L19">public class SalaForm {</span>
+
+    @NotBlank(message = &quot;Informe o nome da sala.&quot;)
+    @Size(max = 100, message = &quot;O nome deve ter no máximo 100 caracteres.&quot;)
+    private String nome;
+
+    @NotNull(message = &quot;Selecione o tipo da sala.&quot;)
+    private TipoSala tipo;
+
+    @NotNull(message = &quot;Informe a capacidade.&quot;)
+    @Min(value = 1, message = &quot;A capacidade deve ser de no mínimo 1.&quot;)
+    @Max(value = SalaService.CAPACIDADE_MAXIMA, message = &quot;A capacidade deve ser de no máximo 1000.&quot;)
+    private Integer capacidade;
+
+    public static SalaForm de(Sala sala) {
+<span class="nc" id="L34">        SalaForm form = new SalaForm();</span>
+<span class="nc" id="L35">        form.setNome(sala.getNome());</span>
+<span class="nc" id="L36">        form.setTipo(sala.getTipo());</span>
+<span class="nc" id="L37">        form.setCapacidade(sala.getCapacidade());</span>
+<span class="nc" id="L38">        return form;</span>
+    }
+
+    public String getNome() {
+<span class="nc" id="L42">        return nome;</span>
+    }
+
+    public void setNome(String nome) {
+<span class="nc" id="L46">        this.nome = nome;</span>
+<span class="nc" id="L47">    }</span>
+
+    public TipoSala getTipo() {
+<span class="nc" id="L50">        return tipo;</span>
+    }
+
+    public void setTipo(TipoSala tipo) {
+<span class="nc" id="L54">        this.tipo = tipo;</span>
+<span class="nc" id="L55">    }</span>
+
+    public Integer getCapacidade() {
+<span class="nc" id="L58">        return capacidade;</span>
+    }
+
+    public void setCapacidade(Integer capacidade) {
+<span class="nc" id="L62">        this.capacidade = capacidade;</span>
+<span class="nc" id="L63">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

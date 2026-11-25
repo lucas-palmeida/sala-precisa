@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos :: cabecalho('Salas')}"></head>
+<body>
+<header th:replace="~{fragmentos :: menu}"></header>
+<main>
+    <div class="titulo-pagina">
+        <h1>Salas</h1>
+        <a id="botao-nova-sala" class="botao" th:href="@{/salas/nova}">Nova sala</a>
+    </div>
+
+    <div th:replace="~{fragmentos :: mensagens}"></div>
+
+    <p id="sem-salas" th:if="${#lists.isEmpty(salas)}">Nenhuma sala cadastrada.</p>
+
+    <table id="tabela-salas" th:unless="${#lists.isEmpty(salas)}">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Capacidade</th>
+            <th>Situação</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sala : ${salas}" th:attr="data-nome=${sala.nome}">
+            <td class="nome" th:text="${sala.nome}">Sala 1</td>
+            <td class="tipo" th:text="${sala.tipo.descricao}">Sala de reunião</td>
+            <td class="capacidade" th:text="${sala.capacidade}">10</td>
+            <td class="situacao">
+                <span th:if="${!sala.ativa}" class="etiqueta inativa">Inativa</span>
+                <span th:if="${sala.ativa and idsOcupadas.contains(sala.id)}" class="etiqueta ocupada">Ocupada</span>
+                <span th:if="${sala.ativa and !idsOcupadas.contains(sala.id)}" class="etiqueta livre">Livre</span>
+            </td>
+            <td class="acoes">
+                <a class="link-editar" th:href="@{/salas/{id}/editar(id=${sala.id})}">Editar</a>
+                <a class="link-reservar" th:if="${sala.ativa}"
+                   th:href="@{/reservas/nova(salaId=${sala.id})}">Reservar</a>
+                <form th:if="${sala.ativa}" th:action="@{/salas/{id}/desativar(id=${sala.id})}" method="post">
+                    <button type="submit" class="botao-desativar secundario">Desativar</button>
+                </form>
+                <form th:unless="${sala.ativa}" th:action="@{/salas/{id}/ativar(id=${sala.id})}" method="post">
+                    <button type="submit" class="botao-ativar secundario">Ativar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos :: cabecalho('Nova reserva')}"></head>
+<body>
+<header th:replace="~{fragmentos :: menu}"></header>
+<main>
+    <h1>Nova reserva</h1>
+
+    <div th:replace="~{fragmentos :: mensagens}"></div>
+
+    <p id="sem-salas-ativas" th:if="${#lists.isEmpty(salas)}">
+        Não há salas ativas. <a th:href="@{/salas/nova}">Cadastre uma sala</a> antes de reservar.
+    </p>
+
+    <!-- novalidate: a validação é feita no servidor (e verificada pelos testes) -->
+    <form id="form-reserva" th:action="@{/reservas}" th:object="${reservaForm}" method="post" novalidate>
+        <label for="salaId">Sala</label>
+        <select th:field="*{salaId}">
+            <option value="">Selecione...</option>
+            <option th:each="s : ${salas}" th:value="${s.id}"
+                    th:text="${s.nome} + ' (' + ${s.capacidade} + ' pessoas)'"></option>
+        </select>
+        <span id="erro-salaId" class="erro-campo" th:if="${#fields.hasErrors('salaId')}" th:errors="*{salaId}"></span>
+
+        <label for="solicitante">Solicitante</label>
+        <input type="text" th:field="*{solicitante}" maxlength="100">
+        <span id="erro-solicitante" class="erro-campo" th:if="${#fields.hasErrors('solicitante')}"
+              th:errors="*{solicitante}"></span>
+
+        <label for="inicio">Início</label>
+        <input type="datetime-local" th:field="*{inicio}">
+        <span id="erro-inicio" class="erro-campo" th:if="${#fields.hasErrors('inicio')}" th:errors="*{inicio}"></span>
+
+        <label for="fim">Fim</label>
+        <input type="datetime-local" th:field="*{fim}">
+        <span id="erro-fim" class="erro-campo" th:if="${#fields.hasErrors('fim')}" th:errors="*{fim}"></span>
+
+        <div class="acoes-form">
+            <button id="botao-reservar" type="submit">Reservar</button>
+            <a th:href="@{/reservas}">Voltar</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>

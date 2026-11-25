@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Reserva.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">salaprecisa</a> &gt; <a href="index.source.html" class="el_package">br.edu.ifrs.salaprecisa.dominio</a> &gt; <span class="el_source">Reserva.java</span></div><h1>Reserva.java</h1><pre class="source lang-java linenums">package br.edu.ifrs.salaprecisa.dominio;
+
+import br.edu.ifrs.salaprecisa.excecao.RegraNegocioException;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import java.time.LocalDateTime;
+
+/**
+ * Reserva de uma sala por um solicitante durante um período [inicio, fim).
+ *
+ * &lt;p&gt;O período é tratado como intervalo semiaberto: a reserva ocupa a sala a partir
+ * de {@code inicio} (inclusive) até {@code fim} (exclusive). Assim, uma reserva que
+ * termina às 10h e outra que começa às 10h não são consideradas conflitantes.&lt;/p&gt;
+ */
+@Entity
+public class Reserva {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = &quot;sala_id&quot;, nullable = false)
+    private Sala sala;
+
+    @Column(nullable = false, length = 100)
+    private String solicitante;
+
+    @Column(nullable = false)
+    private LocalDateTime inicio;
+
+    @Column(nullable = false)
+    private LocalDateTime fim;
+
+<span class="fc" id="L42">    @Enumerated(EnumType.STRING)</span>
+    @Column(nullable = false, length = 20)
+    private StatusReserva status = StatusReserva.ATIVA;
+
+    /** Construtor exigido pela JPA. */
+<span class="fc" id="L47">    protected Reserva() {</span>
+<span class="fc" id="L48">    }</span>
+
+<span class="fc" id="L50">    public Reserva(Sala sala, String solicitante, LocalDateTime inicio, LocalDateTime fim) {</span>
+<span class="fc" id="L51">        this.sala = sala;</span>
+<span class="fc" id="L52">        this.solicitante = solicitante;</span>
+<span class="fc" id="L53">        this.inicio = inicio;</span>
+<span class="fc" id="L54">        this.fim = fim;</span>
+<span class="fc" id="L55">    }</span>
+
+    /**
+     * Indica se o período desta reserva se sobrepõe ao período informado.
+     * Períodos apenas adjacentes (um termina quando o outro começa) não se sobrepõem.
+     */
+    public boolean sobrepoe(LocalDateTime outroInicio, LocalDateTime outroFim) {
+<span class="fc bfc" id="L62" title="All 4 branches covered.">        return inicio.isBefore(outroFim) &amp;&amp; outroInicio.isBefore(fim);</span>
+    }
+
+    /** Indica se a reserva está ativa e ocupando a sala no instante informado. */
+    public boolean estaEmAndamento(LocalDateTime agora) {
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        return status == StatusReserva.ATIVA</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">                &amp;&amp; !inicio.isAfter(agora)</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">                &amp;&amp; agora.isBefore(fim);</span>
+    }
+
+    /** Indica se a reserva está ativa, mas o período já terminou no instante informado. */
+    public boolean deveSerEncerrada(LocalDateTime agora) {
+<span class="fc bfc" id="L74" title="All 4 branches covered.">        return status == StatusReserva.ATIVA &amp;&amp; !fim.isAfter(agora);</span>
+    }
+
+    /** Cancela a reserva. Somente reservas ativas podem ser canceladas. */
+    public void cancelar() {
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if (status != StatusReserva.ATIVA) {</span>
+<span class="fc" id="L80">            throw new RegraNegocioException(&quot;Somente reservas ativas podem ser canceladas.&quot;);</span>
+        }
+<span class="fc" id="L82">        this.status = StatusReserva.CANCELADA;</span>
+<span class="fc" id="L83">    }</span>
+
+    /** Encerra a reserva ao final do período, liberando a sala. */
+    public void encerrar() {
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (status != StatusReserva.ATIVA) {</span>
+<span class="fc" id="L88">            throw new RegraNegocioException(&quot;Somente reservas ativas podem ser encerradas.&quot;);</span>
+        }
+<span class="fc" id="L90">        this.status = StatusReserva.ENCERRADA;</span>
+<span class="fc" id="L91">    }</span>
+
+    public Long getId() {
+<span class="fc" id="L94">        return id;</span>
+    }
+
+    public Sala getSala() {
+<span class="fc" id="L98">        return sala;</span>
+    }
+
+    public String getSolicitante() {
+<span class="fc" id="L102">        return solicitante;</span>
+    }
+
+    public LocalDateTime getInicio() {
+<span class="fc" id="L106">        return inicio;</span>
+    }
+
+    public LocalDateTime getFim() {
+<span class="fc" id="L110">        return fim;</span>
+    }
+
+    public StatusReserva getStatus() {
+<span class="fc" id="L114">        return status;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

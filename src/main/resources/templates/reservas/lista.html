@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos :: cabecalho('Reservas')}"></head>
+<body>
+<header th:replace="~{fragmentos :: menu}"></header>
+<main>
+    <div class="titulo-pagina">
+        <h1>Reservas</h1>
+        <a id="botao-nova-reserva" class="botao" th:href="@{/reservas/nova}">Nova reserva</a>
+    </div>
+
+    <div th:replace="~{fragmentos :: mensagens}"></div>
+
+    <p id="sem-reservas" th:if="${#lists.isEmpty(reservas)}">Nenhuma reserva registrada.</p>
+
+    <table id="tabela-reservas" th:unless="${#lists.isEmpty(reservas)}">
+        <thead>
+        <tr>
+            <th>Sala</th>
+            <th>Solicitante</th>
+            <th>Início</th>
+            <th>Fim</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="reserva : ${reservas}" th:attr="data-id=${reserva.id}">
+            <td class="sala" th:text="${reserva.sala.nome}">Sala 1</td>
+            <td class="solicitante" th:text="${reserva.solicitante}">Fulano</td>
+            <td class="inicio" th:text="${#temporals.format(reserva.inicio, 'dd/MM/yyyy HH:mm')}">01/01/2027 08:00</td>
+            <td class="fim" th:text="${#temporals.format(reserva.fim, 'dd/MM/yyyy HH:mm')}">01/01/2027 10:00</td>
+            <td class="status"><span th:class="'etiqueta ' + ${#strings.toLowerCase(reserva.status)}"
+                                     th:text="${reserva.status.descricao}">Ativa</span></td>
+            <td class="acoes">
+                <form th:if="${reserva.status.name() == 'ATIVA'}"
+                      th:action="@{/reservas/{id}/cancelar(id=${reserva.id})}" method="post">
+                    <button type="submit" class="botao-cancelar secundario">Cancelar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

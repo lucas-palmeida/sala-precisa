@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos :: cabecalho(${titulo})}"></head>
+<body>
+<header th:replace="~{fragmentos :: menu}"></header>
+<main>
+    <h1 th:text="${titulo}">Nova sala</h1>
+
+    <div th:replace="~{fragmentos :: mensagens}"></div>
+
+    <!-- novalidate: a validação é feita no servidor (e verificada pelos testes) -->
+    <form id="form-sala" th:action="@{${acao}}" th:object="${salaForm}" method="post" novalidate>
+        <label for="nome">Nome</label>
+        <input type="text" th:field="*{nome}" maxlength="100">
+        <span id="erro-nome" class="erro-campo" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+
+        <label for="tipo">Tipo</label>
+        <select th:field="*{tipo}">
+            <option value="">Selecione...</option>
+            <option th:each="t : ${tipos}" th:value="${t}" th:text="${t.descricao}"></option>
+        </select>
+        <span id="erro-tipo" class="erro-campo" th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}"></span>
+
+        <label for="capacidade">Capacidade (pessoas)</label>
+        <input type="number" th:field="*{capacidade}" min="1" max="1000">
+        <span id="erro-capacidade" class="erro-campo" th:if="${#fields.hasErrors('capacidade')}"
+              th:errors="*{capacidade}"></span>
+
+        <div class="acoes-form">
+            <button id="botao-salvar" type="submit">Salvar</button>
+            <a th:href="@{/salas}">Voltar</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>

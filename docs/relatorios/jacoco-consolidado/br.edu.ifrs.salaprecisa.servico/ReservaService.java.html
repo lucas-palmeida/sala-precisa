@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReservaService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">salaprecisa</a> &gt; <a href="index.source.html" class="el_package">br.edu.ifrs.salaprecisa.servico</a> &gt; <span class="el_source">ReservaService.java</span></div><h1>ReservaService.java</h1><pre class="source lang-java linenums">package br.edu.ifrs.salaprecisa.servico;
+
+import br.edu.ifrs.salaprecisa.dominio.Reserva;
+import br.edu.ifrs.salaprecisa.dominio.Sala;
+import br.edu.ifrs.salaprecisa.dominio.StatusReserva;
+import br.edu.ifrs.salaprecisa.excecao.ConflitoReservaException;
+import br.edu.ifrs.salaprecisa.excecao.RecursoNaoEncontradoException;
+import br.edu.ifrs.salaprecisa.excecao.RegraNegocioException;
+import br.edu.ifrs.salaprecisa.repositorio.ReservaRepository;
+import br.edu.ifrs.salaprecisa.repositorio.SalaRepository;
+import java.time.Clock;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.List;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Regras de negócio relacionadas às reservas de salas.
+ */
+@Service
+public class ReservaService {
+
+    /** Duração máxima permitida para uma reserva. */
+<span class="fc" id="L25">    public static final Duration DURACAO_MAXIMA = Duration.ofHours(8);</span>
+
+    private final ReservaRepository reservaRepository;
+    private final SalaRepository salaRepository;
+    private final Clock clock;
+
+<span class="fc" id="L31">    public ReservaService(ReservaRepository reservaRepository, SalaRepository salaRepository, Clock clock) {</span>
+<span class="fc" id="L32">        this.reservaRepository = reservaRepository;</span>
+<span class="fc" id="L33">        this.salaRepository = salaRepository;</span>
+<span class="fc" id="L34">        this.clock = clock;</span>
+<span class="fc" id="L35">    }</span>
+
+    /**
+     * Cria uma reserva, desde que a sala exista e esteja ativa, o período seja válido
+     * e não haja outra reserva ativa sobreposta para a mesma sala.
+     */
+    @Transactional
+    public Reserva criar(Long salaId, String solicitante, LocalDateTime inicio, LocalDateTime fim) {
+<span class="fc" id="L43">        Sala sala = salaRepository.findById(salaId)</span>
+<span class="fc" id="L44">                .orElseThrow(() -&gt; new RecursoNaoEncontradoException(&quot;Sala não encontrada: &quot; + salaId));</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (!sala.isAtiva()) {</span>
+<span class="fc" id="L46">            throw new RegraNegocioException(&quot;A sala está inativa e não aceita reservas.&quot;);</span>
+        }
+<span class="fc bfc" id="L48" title="All 4 branches covered.">        if (solicitante == null || solicitante.isBlank()) {</span>
+<span class="fc" id="L49">            throw new RegraNegocioException(&quot;O solicitante é obrigatório.&quot;);</span>
+        }
+<span class="fc" id="L51">        validarPeriodo(inicio, fim);</span>
+<span class="fc" id="L52">        validarAntecedenciaEDuracao(inicio, fim);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (reservaRepository.existeReservaSobreposta(salaId, inicio, fim, StatusReserva.ATIVA)) {</span>
+<span class="fc" id="L54">            throw new ConflitoReservaException(&quot;A sala já está reservada em parte do período informado.&quot;);</span>
+        }
+<span class="fc" id="L56">        return reservaRepository.save(new Reserva(sala, solicitante.trim(), inicio, fim));</span>
+    }
+
+    @Transactional
+    public Reserva cancelar(Long id) {
+<span class="fc" id="L61">        Reserva reserva = buscarPorId(id);</span>
+<span class="fc" id="L62">        reserva.cancelar();</span>
+<span class="fc" id="L63">        return reservaRepository.save(reserva);</span>
+    }
+
+    /**
+     * Encerra todas as reservas ativas cujo período já terminou, liberando as salas.
+     *
+     * @return quantidade de reservas encerradas
+     */
+    @Transactional
+    public int encerrarReservasVencidas() {
+<span class="fc" id="L73">        LocalDateTime agora = LocalDateTime.now(clock);</span>
+<span class="fc" id="L74">        List&lt;Reserva&gt; vencidas = reservaRepository.findByStatusAndFimLessThanEqual(StatusReserva.ATIVA, agora);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        for (Reserva reserva : vencidas) {</span>
+<span class="fc" id="L76">            reserva.encerrar();</span>
+<span class="fc" id="L77">        }</span>
+<span class="fc" id="L78">        reservaRepository.saveAll(vencidas);</span>
+<span class="fc" id="L79">        return vencidas.size();</span>
+    }
+
+    @Transactional(readOnly = true)
+    public Reserva buscarPorId(Long id) {
+<span class="fc" id="L84">        return reservaRepository.findById(id)</span>
+<span class="fc" id="L85">                .orElseThrow(() -&gt; new RecursoNaoEncontradoException(&quot;Reserva não encontrada: &quot; + id));</span>
+    }
+
+    @Transactional(readOnly = true)
+    public List&lt;Reserva&gt; listar() {
+<span class="fc" id="L90">        return reservaRepository.findAllByOrderByInicioDesc();</span>
+    }
+
+    @Transactional(readOnly = true)
+    public List&lt;Reserva&gt; listarPorSala(Long salaId) {
+<span class="fc bfc" id="L95" title="All 2 branches covered.">        if (!salaRepository.existsById(salaId)) {</span>
+<span class="fc" id="L96">            throw new RecursoNaoEncontradoException(&quot;Sala não encontrada: &quot; + salaId);</span>
+        }
+<span class="fc" id="L98">        return reservaRepository.findBySalaIdOrderByInicioAsc(salaId);</span>
+    }
+
+    /** Verifica se as datas foram informadas e se o fim é posterior ao início. */
+    private void validarPeriodo(LocalDateTime inicio, LocalDateTime fim) {
+<span class="fc bfc" id="L103" title="All 4 branches covered.">        if (inicio == null || fim == null) {</span>
+<span class="fc" id="L104">            throw new RegraNegocioException(&quot;As datas de início e fim são obrigatórias.&quot;);</span>
+        }
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        if (!fim.isAfter(inicio)) {</span>
+<span class="fc" id="L107">            throw new RegraNegocioException(&quot;A data de fim deve ser posterior à data de início.&quot;);</span>
+        }
+<span class="fc" id="L109">    }</span>
+
+    /** Verifica se o início não está no passado e se a duração não excede o máximo permitido. */
+    private void validarAntecedenciaEDuracao(LocalDateTime inicio, LocalDateTime fim) {
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        if (inicio.isBefore(LocalDateTime.now(clock))) {</span>
+<span class="fc" id="L114">            throw new RegraNegocioException(&quot;Não é possível reservar com início no passado.&quot;);</span>
+        }
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if (Duration.between(inicio, fim).compareTo(DURACAO_MAXIMA) &gt; 0) {</span>
+<span class="fc" id="L117">            throw new RegraNegocioException(&quot;A reserva não pode ultrapassar &quot;</span>
+<span class="fc" id="L118">                    + DURACAO_MAXIMA.toHours() + &quot; horas.&quot;);</span>
+        }
+<span class="fc" id="L120">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

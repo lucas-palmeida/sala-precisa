@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.17.0" timestamp="2026-11-22T01:33:33.630">
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\SalaprecisaApplication.java">
+<violation beginline="7" endline="7" begincolumn="8" endcolumn="13" rule="UseUtilityClass" ruleset="Design" package="br.edu.ifrs.salaprecisa" class="SalaprecisaApplication" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_design.html#useutilityclass" priority="3">
+All methods are static. Consider adding a private no-args constructor to prevent instantiation.
+</violation>
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\api\ReservaResponse.java">
+<violation beginline="14" endline="14" begincolumn="53" endcolumn="70" rule="LawOfDemeter" ruleset="Design" package="br.edu.ifrs.salaprecisa.api" class="ReservaResponse" method="de" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Call to `getSala` on foreign value `reserva` (degree 1)
+</violation>
+<violation beginline="14" endline="14" begincolumn="80" endcolumn="97" rule="LawOfDemeter" ruleset="Design" package="br.edu.ifrs.salaprecisa.api" class="ReservaResponse" method="de" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Call to `getSala` on foreign value `reserva` (degree 1)
+</violation>
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\servico\ReservaService.java">
+<violation beginline="100" endline="100" begincolumn="18" endcolumn="32" rule="CyclomaticComplexity" ruleset="Design" package="br.edu.ifrs.salaprecisa.servico" class="ReservaService" method="validarPeriodo" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validarPeriodo(LocalDateTime, LocalDateTime)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\web\ReservaForm.java">
+<violation beginline="13" endline="13" begincolumn="8" endcolumn="13" rule="DataClass" ruleset="Design" package="br.edu.ifrs.salaprecisa.web" class="ReservaForm" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'ReservaForm' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=8, WMC=8)
+</violation>
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\web\SalaForm.java">
+<violation beginline="15" endline="15" begincolumn="8" endcolumn="13" rule="DataClass" ruleset="Design" package="br.edu.ifrs.salaprecisa.web" class="SalaForm" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'SalaForm' is suspected to be a Data Class (WOC=14.286%, NOPA=0, NOAM=6, WMC=7)
+</violation>
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\web\SalaWebController.java">
+<violation beginline="37" endline="37" begincolumn="17" endcolumn="25" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="br.edu.ifrs.salaprecisa.web" class="SalaWebController" method="listar" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal "/salas" appears 5 times in this file; the first occurrence is on line 37
+</violation>
+<violation beginline="46" endline="46" begincolumn="28" endcolumn="38" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="br.edu.ifrs.salaprecisa.web" class="SalaWebController" method="nova" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal "salaForm" appears 4 times in this file; the first occurrence is on line 46
+</violation>
+<violation beginline="62" endline="62" begincolumn="36" endcolumn="45" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="br.edu.ifrs.salaprecisa.web" class="SalaWebController" method="cadastrar" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal "sucesso" appears 4 times in this file; the first occurrence is on line 62
+</violation>
+</file>
+<configerror rule="LoosePackageCoupling" msg="No packages or classes specified"/>
+</pmd>

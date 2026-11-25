@@ -1,0 +1,18 @@
+# Evidência manual (curl) — resposta ao cadastro de sala via formulário, APÓS as correções
+# Comando: curl -s -D - -o /dev/null -X POST http://localhost:8089/salas -d "nome=Sala+Curl2&tipo=OUTRO&capacidade=5"
+# Data: 22/11/2026 02:17
+
+HTTP/1.1 302 
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+Referrer-Policy: same-origin
+Set-Cookie: JSESSIONID=3C1E632CE9727D60AC859140FD95D812; Path=/; HttpOnly; SameSite=Lax
+Location: http://localhost:8089/salas
+Content-Language: pt-BR
+Content-Length: 0
+Date: Sun, 22 Nov 2026 05:17:36 GMT
+
+# Content-Type não suportado (esperado 415):
+HTTP/1.1 415 
+{"status":415,"mensagem":"Requisição não suportada.","detalhes":[]}

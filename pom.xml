@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>4.1.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>br.edu.ifrs</groupId>
+	<artifactId>salaprecisa</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>salaprecisa</name>
+	<description>Sistema de reservas de salas</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Versões das ferramentas de análise estática -->
+		<pmd-plugin.version>3.28.0</pmd-plugin.version>
+		<checkstyle-plugin.version>3.6.0</checkstyle-plugin.version>
+		<!-- Última versão do Checkstyle compatível com Java 17 (a 13.x exige Java 21) -->
+		<checkstyle.version>12.3.1</checkstyle.version>
+		<!-- Cobertura de código -->
+		<jacoco.version>0.8.16</jacoco.version>
+		<cobertura.minima.linhas>0.80</cobertura.minima.linhas>
+		<cobertura.minima.ramos>0.80</cobertura.minima.ramos>
+		<!-- Testes de componente da API REST (não gerenciado pelo Spring Boot 4) -->
+		<rest-assured.version>6.3.0</rest-assured.version>
+		<!--
+		  Testes de sistema (Selenium, classes *SistemaIT.java): excluídos do build padrão
+		  para que ele não dependa de navegador. Executados com: mvnw verify -Psistema
+		  Navegador: -Dnavegador=edge|chrome|firefox (padrão: edge); -Dheadless=false exibe a janela.
+		-->
+		<testes.sistema.exclusao>**/*SistemaIT.java</testes.sistema.exclusao>
+		<navegador>edge</navegador>
+		<headless>true</headless>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webmvc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webmvc-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${rest-assured.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<!--
+			  Testes de componente (classes *IT.java) executados pelo Maven Failsafe nas fases
+			  "integration-test" e "verify". A configuração (goals e classesDirectory) é herdada
+			  do spring-boot-starter-parent. Os testes de sistema (*SistemaIT) ficam de fora,
+			  exceto no perfil "sistema"; o navegador escolhido é repassado aos testes.
+			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>${testes.sistema.exclusao}</exclude>
+					</excludes>
+					<systemPropertyVariables>
+						<navegador>${navegador}</navegador>
+						<headless>${headless}</headless>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+
+			<!--
+			  Cobertura de código com JaCoCo.
+			  Testes unitários (Surefire):
+			  - prepare-agent: instrumenta a JVM dos testes unitários;
+			  - report: relatório em target/site/jacoco ao final da fase "test";
+			  - check: falha o build se a cobertura de domínio e serviço ficar abaixo do mínimo.
+			  Testes de componente (Failsafe):
+			  - prepare-agent-integration / report-integration: relatório em target/site/jacoco-it.
+			  Consolidado:
+			  - merge + report: une os dois resultados em target/site/jacoco-consolidado;
+			  - check: falha o build se a cobertura total do sistema ficar abaixo do mínimo.
+			-->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<executions>
+					<execution>
+						<id>jacoco-preparar-agente</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-relatorio</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-verificar-cobertura</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<rule>
+									<element>PACKAGE</element>
+									<includes>
+										<include>br.edu.ifrs.salaprecisa.dominio</include>
+										<include>br.edu.ifrs.salaprecisa.servico</include>
+									</includes>
+									<limits>
+										<limit>
+											<counter>LINE</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>${cobertura.minima.linhas}</minimum>
+										</limit>
+										<limit>
+											<counter>BRANCH</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>${cobertura.minima.ramos}</minimum>
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
+					</execution>
+					<execution>
+						<id>jacoco-preparar-agente-componente</id>
+						<goals>
+							<goal>prepare-agent-integration</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-relatorio-componente</id>
+						<goals>
+							<goal>report-integration</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-mesclar</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>merge</goal>
+						</goals>
+						<configuration>
+							<fileSets>
+								<fileSet>
+									<directory>${project.build.directory}</directory>
+									<includes>
+										<include>jacoco.exec</include>
+										<include>jacoco-it.exec</include>
+									</includes>
+								</fileSet>
+							</fileSets>
+							<destFile>${project.build.directory}/jacoco-consolidado.exec</destFile>
+						</configuration>
+					</execution>
+					<execution>
+						<id>jacoco-relatorio-consolidado</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<dataFile>${project.build.directory}/jacoco-consolidado.exec</dataFile>
+							<outputDirectory>${project.reporting.outputDirectory}/jacoco-consolidado</outputDirectory>
+						</configuration>
+					</execution>
+					<execution>
+						<id>jacoco-verificar-cobertura-consolidada</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<dataFile>${project.build.directory}/jacoco-consolidado.exec</dataFile>
+							<rules>
+								<rule>
+									<element>BUNDLE</element>
+									<limits>
+										<limit>
+											<counter>LINE</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>${cobertura.minima.linhas}</minimum>
+										</limit>
+										<limit>
+											<counter>BRANCH</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>${cobertura.minima.ramos}</minimum>
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!--
+			  Análise estática com PMD: executada na fase "verify".
+			  "check" analisa o código e "cpd-check" procura código duplicado (copy/paste).
+			  O build falha se houver qualquer violação (failurePriority = 5, a mais baixa).
+			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>${pmd-plugin.version}</version>
+				<configuration>
+					<rulesets>
+						<ruleset>${project.basedir}/pmd-ruleset.xml</ruleset>
+					</rulesets>
+					<targetJdk>${java.version}</targetJdk>
+					<failOnViolation>true</failOnViolation>
+					<failurePriority>5</failurePriority>
+					<printFailingErrors>true</printFailingErrors>
+					<minimumTokens>50</minimumTokens>
+					<linkXRef>false</linkXRef>
+				</configuration>
+				<executions>
+					<execution>
+						<id>pmd-verificacao</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+							<goal>cpd-check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!--
+			  Análise estática com Checkstyle (padrão de codificação): executada na fase "verify".
+			  O build falha se houver qualquer violação.
+			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle-plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.puppycrawl.tools</groupId>
+						<artifactId>checkstyle</artifactId>
+						<version>${checkstyle.version}</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<configLocation>${project.basedir}/checkstyle.xml</configLocation>
+					<consoleOutput>true</consoleOutput>
+					<failOnViolation>true</failOnViolation>
+					<violationSeverity>warning</violationSeverity>
+					<linkXRef>false</linkXRef>
+				</configuration>
+				<executions>
+					<execution>
+						<id>checkstyle-verificacao</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<!-- mvnw verify -Psistema : executa também os testes de sistema (Selenium) -->
+		<profile>
+			<id>sistema</id>
+			<properties>
+				<testes.sistema.exclusao>nenhum-teste-excluido</testes.sistema.exclusao>
+			</properties>
+		</profile>
+	</profiles>
+
+</project>

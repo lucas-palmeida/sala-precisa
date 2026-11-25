@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CabecalhosSegurancaFilter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">salaprecisa</a> &gt; <a href="index.source.html" class="el_package">br.edu.ifrs.salaprecisa.config</a> &gt; <span class="el_source">CabecalhosSegurancaFilter.java</span></div><h1>CabecalhosSegurancaFilter.java</h1><pre class="source lang-java linenums">package br.edu.ifrs.salaprecisa.config;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+/**
+ * Adiciona cabeçalhos HTTP de segurança a todas as respostas (correção de achado do
+ * teste de segurança, ver docs/teste-seguranca.md).
+ *
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@code X-Content-Type-Options: nosniff}: impede o navegador de &quot;adivinhar&quot; o tipo
+ *       do conteúdo, evitando que um texto seja interpretado como script;&lt;/li&gt;
+ *   &lt;li&gt;{@code X-Frame-Options: DENY}: impede que as páginas sejam exibidas dentro de
+ *       frames de outros sites (proteção contra clickjacking);&lt;/li&gt;
+ *   &lt;li&gt;{@code Content-Security-Policy}: só permite carregar recursos do próprio sistema
+ *       e bloqueia scripts embutidos, uma segunda barreira contra XSS;&lt;/li&gt;
+ *   &lt;li&gt;{@code Referrer-Policy: same-origin}: não envia o endereço das páginas a outros sites.&lt;/li&gt;
+ * &lt;/ul&gt;
+ */
+@Component
+<span class="fc" id="L26">public class CabecalhosSegurancaFilter extends OncePerRequestFilter {</span>
+
+    static final String POLITICA_CONTEUDO = &quot;default-src 'self'; object-src 'none'; base-uri 'self'; &quot;
+            + &quot;form-action 'self'; frame-ancestors 'none'&quot;;
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+            throws ServletException, IOException {
+<span class="fc" id="L34">        response.setHeader(&quot;X-Content-Type-Options&quot;, &quot;nosniff&quot;);</span>
+<span class="fc" id="L35">        response.setHeader(&quot;X-Frame-Options&quot;, &quot;DENY&quot;);</span>
+<span class="fc" id="L36">        response.setHeader(&quot;Content-Security-Policy&quot;, POLITICA_CONTEUDO);</span>
+<span class="fc" id="L37">        response.setHeader(&quot;Referrer-Policy&quot;, &quot;same-origin&quot;);</span>
+<span class="fc" id="L38">        chain.doFilter(request, response);</span>
+<span class="fc" id="L39">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

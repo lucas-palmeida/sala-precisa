@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.edu.ifrs.salaprecisa.sistema.ReservarSalaSistemaIT
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.52 s -- in br.edu.ifrs.salaprecisa.sistema.ReservarSalaSistemaIT

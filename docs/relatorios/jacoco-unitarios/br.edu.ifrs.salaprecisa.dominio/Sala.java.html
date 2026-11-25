@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Sala.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">salaprecisa</a> &gt; <a href="index.source.html" class="el_package">br.edu.ifrs.salaprecisa.dominio</a> &gt; <span class="el_source">Sala.java</span></div><h1>Sala.java</h1><pre class="source lang-java linenums">package br.edu.ifrs.salaprecisa.dominio;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+/**
+ * Ambiente que pode ser reservado (sala de reunião, auditório, laboratório etc.).
+ */
+@Entity
+public class Sala {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, unique = true, length = 100)
+    private String nome;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private TipoSala tipo;
+
+    @Column(nullable = false)
+    private int capacidade;
+
+<span class="fc" id="L31">    @Column(nullable = false)</span>
+    private boolean ativa = true;
+
+    /** Construtor exigido pela JPA. */
+<span class="fc" id="L35">    protected Sala() {</span>
+<span class="fc" id="L36">    }</span>
+
+<span class="fc" id="L38">    public Sala(String nome, TipoSala tipo, int capacidade) {</span>
+<span class="fc" id="L39">        this.nome = nome;</span>
+<span class="fc" id="L40">        this.tipo = tipo;</span>
+<span class="fc" id="L41">        this.capacidade = capacidade;</span>
+<span class="fc" id="L42">    }</span>
+
+    /** Altera os dados cadastrais da sala. */
+    public void atualizar(String novoNome, TipoSala novoTipo, int novaCapacidade) {
+<span class="fc" id="L46">        this.nome = novoNome;</span>
+<span class="fc" id="L47">        this.tipo = novoTipo;</span>
+<span class="fc" id="L48">        this.capacidade = novaCapacidade;</span>
+<span class="fc" id="L49">    }</span>
+
+    /** Desativa a sala: ela deixa de aceitar novas reservas. */
+    public void desativar() {
+<span class="fc" id="L53">        this.ativa = false;</span>
+<span class="fc" id="L54">    }</span>
+
+    /** Reativa a sala, permitindo novas reservas. */
+    public void ativar() {
+<span class="fc" id="L58">        this.ativa = true;</span>
+<span class="fc" id="L59">    }</span>
+
+    public Long getId() {
+<span class="fc" id="L62">        return id;</span>
+    }
+
+    public String getNome() {
+<span class="fc" id="L66">        return nome;</span>
+    }
+
+    public TipoSala getTipo() {
+<span class="fc" id="L70">        return tipo;</span>
+    }
+
+    public int getCapacidade() {
+<span class="fc" id="L74">        return capacidade;</span>
+    }
+
+    public boolean isAtiva() {
+<span class="fc" id="L78">        return ativa;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

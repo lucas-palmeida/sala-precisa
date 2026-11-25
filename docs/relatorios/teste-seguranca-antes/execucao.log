@@ -1,0 +1,381 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24571 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] ----------------------< br.edu.ifrs:salaprecisa >-----------------------
+[INFO] Building salaprecisa 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ salaprecisa ---
+[INFO] Deleting C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target
+[INFO] 
+[INFO] --- jacoco:0.8.16:prepare-agent (jacoco-preparar-agente) @ salaprecisa ---
+[INFO] argLine set to "-javaagent:C:\\Users\\lucas\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\workspace\\validacao-verificacao-sistemas\\salaprecisa\\target\\jacoco.exec"
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ salaprecisa ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 7 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ salaprecisa ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 28 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ salaprecisa ---
+[INFO] skip non existing resourceDirectory C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ salaprecisa ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 25 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- failsafe:3.5.6:integration-test (default-cli) @ salaprecisa ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running Segurança: API REST
+02:15:20.279 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:15:20.460 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT
+02:15:20.586 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:15:20.586 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT
+[INFO] Running Exposição de informações
+02:15:20.610 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$ExposicaoDeInformacoes]: ExposicaoDeInformacoes does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:15:20.625 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$ExposicaoDeInformacoes
+02:15:20.627 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$ExposicaoDeInformacoes]: ExposicaoDeInformacoes does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:15:20.627 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:15:20.627 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$ExposicaoDeInformacoes
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.3)
+
+2026-11-22T02:15:20.988-03:00  INFO 1472 --- [salaprecisa] [           main] .s.SegurancaApiIT$ExposicaoDeInformacoes : Starting SegurancaApiIT.ExposicaoDeInformacoes using Java 17.0.21.1 with PID 1472 (started by lucas in C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa)
+2026-11-22T02:15:20.988-03:00  INFO 1472 --- [salaprecisa] [           main] .s.SegurancaApiIT$ExposicaoDeInformacoes : No active profile set, falling back to 1 default profile: "default"
+2026-11-22T02:15:21.995-03:00  INFO 1472 --- [salaprecisa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-22T02:15:22.072-03:00  INFO 1472 --- [salaprecisa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
+2026-11-22T02:15:22.768-03:00  INFO 1472 --- [salaprecisa] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-11-22T02:15:22.784-03:00  INFO 1472 --- [salaprecisa] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-22T02:15:22.784-03:00  INFO 1472 --- [salaprecisa] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-22T02:15:22.847-03:00  INFO 1472 --- [salaprecisa] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1530 ms
+2026-11-22T02:15:23.084-03:00  INFO 1472 --- [salaprecisa] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-22T02:15:23.163-03:00  INFO 1472 --- [salaprecisa] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.15.Final
+2026-11-22T02:15:23.722-03:00  INFO 1472 --- [salaprecisa] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-22T02:15:23.766-03:00  INFO 1472 --- [salaprecisa] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-22T02:15:24.051-03:00  INFO 1472 --- [salaprecisa] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:salaprecisa user=SA
+2026-11-22T02:15:24.056-03:00  INFO 1472 --- [salaprecisa] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-22T02:15:24.130-03:00  INFO 1472 --- [salaprecisa] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:salaprecisa]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: SALAPRECISA/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-22T02:15:25.292-03:00  INFO 1472 --- [salaprecisa] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-22T02:15:25.360-03:00  INFO 1472 --- [salaprecisa] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-22T02:15:25.444-03:00  INFO 1472 --- [salaprecisa] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-22T02:15:26.919-03:00  INFO 1472 --- [salaprecisa] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 56290 (http) with context path '/'
+2026-11-22T02:15:26.921-03:00  INFO 1472 --- [salaprecisa] [           main] .s.SegurancaApiIT$ExposicaoDeInformacoes : Started SegurancaApiIT.ExposicaoDeInformacoes in 6.261 seconds (process running for 7.949)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-11-22T02:15:27.534-03:00  INFO 1472 --- [salaprecisa] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-22T02:15:27.534-03:00  INFO 1472 --- [salaprecisa] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-22T02:15:27.534-03:00  INFO 1472 --- [salaprecisa] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.874 s -- in Exposição de informações
+[INFO] Running Entradas abusivas e atribuição em massa
+2026-11-22T02:15:28.484-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$EntradasAbusivas]: EntradasAbusivas does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:28.490-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$EntradasAbusivas
+2026-11-22T02:15:28.490-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$EntradasAbusivas]: EntradasAbusivas does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:28.491-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:28.491-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$EntradasAbusivas
+2026-11-22T02:15:28.696-03:00 ERROR 1472 --- [salaprecisa] [o-auto-1-exec-2] b.e.i.salaprecisa.api.TratadorErrosApi   : Erro inesperado ao processar requisição da API
+
+org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/plain;charset=ISO-8859-1' is not supported
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:235) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:181) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:156) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-7.0.11.jar:7.0.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224) ~[spring-web-7.0.11.jar:7.0.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:174) ~[spring-web-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.27.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.11.jar:7.0.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.27.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59) ~[tomcat-embed-websocket-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.11.jar:7.0.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.11.jar:7.0.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.11.jar:7.0.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.11.jar:7.0.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.11.jar:7.0.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.11.jar:7.0.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:164) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:411) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1308) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2202) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:947) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:481) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2026-11-22T02:15:28.906-03:00  WARN 1472 --- [salaprecisa] [o-auto-1-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+[ERROR] Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.454 s <<< FAILURE! -- in Entradas abusivas e atribuição em massa
+[ERROR] br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT.tipoDeConteudoNaoSuportado -- Time elapsed: 0.022 s <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <415> but was <500>.
+
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.java:569)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.java:932)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.java:163)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.java:168)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$EntradasAbusivas.tipoDeConteudoNaoSuportado(SegurancaApiIT.java:212)
+
+[INFO] Running Injeção de SQL
+2026-11-22T02:15:28.938-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$InjecaoSql]: InjecaoSql does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:28.938-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$InjecaoSql
+2026-11-22T02:15:28.938-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$InjecaoSql]: InjecaoSql does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:28.938-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:28.938-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$InjecaoSql
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.276 s -- in Injeção de SQL
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.285 s -- in Segurança: API REST
+[INFO] Running Segurança: interface web
+2026-11-22T02:15:29.223-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.223-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT
+2026-11-22T02:15:29.223-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.223-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT
+[INFO] Running Cabeçalhos de segurança HTTP
+2026-11-22T02:15:29.223-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos]: Cabecalhos does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.223-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos
+2026-11-22T02:15:29.223-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos]: Cabecalhos does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.223-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.230-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos
+[ERROR] Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.379 s <<< FAILURE! -- in Cabeçalhos de segurança HTTP
+[ERROR] br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT.cabecalhosPresentes(String)[1] -- Time elapsed: 0.307 s <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected header "X-Content-Type-Options" was not "nosniff", was "null". Headers are:
+Content-Type=text/html;charset=UTF-8
+Content-Language=pt-BR
+Transfer-Encoding=chunked
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.java:569)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.java:932)
+	at io.restassured.internal.ResponseSpecificationImpl.header(ResponseSpecificationImpl.java:219)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.header(ValidatableResponseOptionsImpl.java:114)
+	at br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos.cabecalhosPresentes(SegurancaWebIT.java:112)
+
+[ERROR] br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT.cabecalhosPresentes(String)[2] -- Time elapsed: 0.043 s <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected header "X-Content-Type-Options" was not "nosniff", was "null". Headers are:
+Content-Type=text/html;charset=UTF-8
+Content-Language=pt-BR
+Transfer-Encoding=chunked
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.java:569)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.java:932)
+	at io.restassured.internal.ResponseSpecificationImpl.header(ResponseSpecificationImpl.java:219)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.header(ValidatableResponseOptionsImpl.java:114)
+	at br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos.cabecalhosPresentes(SegurancaWebIT.java:112)
+
+[ERROR] br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT.cabecalhosPresentes(String)[3] -- Time elapsed: 0.009 s <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected header "X-Content-Type-Options" was not "nosniff", was "null". Headers are:
+Content-Type=application/json
+Content-Length=2
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.java:569)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.java:932)
+	at io.restassured.internal.ResponseSpecificationImpl.header(ResponseSpecificationImpl.java:219)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.header(ValidatableResponseOptionsImpl.java:114)
+	at br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos.cabecalhosPresentes(SegurancaWebIT.java:112)
+
+[ERROR] br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT.cabecalhosPresentes(String)[4] -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected header "X-Content-Type-Options" was not "nosniff", was "null". Headers are:
+Last-Modified=Sun, 22 Nov 2026 05:15:15 GMT
+Accept-Ranges=bytes
+Content-Type=text/css
+Content-Length=2084
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.java:569)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.java:932)
+	at io.restassured.internal.ResponseSpecificationImpl.header(ResponseSpecificationImpl.java:219)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.header(ValidatableResponseOptionsImpl.java:114)
+	at br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos.cabecalhosPresentes(SegurancaWebIT.java:112)
+
+[INFO] Running Cross-Site Scripting (XSS)
+2026-11-22T02:15:29.602-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Xss]: Xss does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.602-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Xss
+2026-11-22T02:15:29.609-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Xss]: Xss does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.609-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.609-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Xss
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 s -- in Cross-Site Scripting (XSS)
+[INFO] Running Identificador de sessão
+2026-11-22T02:15:29.699-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao]: Sessao does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.699-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao
+2026-11-22T02:15:29.704-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao]: Sessao does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.704-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.704-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.070 s <<< FAILURE! -- in Identificador de sessão
+[ERROR] br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT.cookieDeSessaoProtegido -- Time elapsed: 0.048 s <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected header "Set-Cookie" was not a string containing "SameSite=Lax", was "JSESSIONID=5F085DE635D219BA4241687D77C2C574; Path=/; HttpOnly". Headers are:
+Set-Cookie=JSESSIONID=5F085DE635D219BA4241687D77C2C574; Path=/; HttpOnly
+Location=http://localhost:56290/salas;jsessionid=5F085DE635D219BA4241687D77C2C574
+Content-Language=pt-BR
+Content-Length=0
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.java:569)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.java:932)
+	at io.restassured.internal.ResponseSpecificationImpl.header(ResponseSpecificationImpl.java:219)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.header(ValidatableResponseOptionsImpl.java:114)
+	at br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao.cookieDeSessaoProtegido(SegurancaWebIT.java:152)
+
+[ERROR] br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT.sessaoNaoApareceNaUrl -- Time elapsed: 0.017 s <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected header "Location" was not not a string containing "jsessionid", was "http://localhost:56290/salas;jsessionid=7B74EF74C82FA22B3962CE8D46CD5967". Headers are:
+Set-Cookie=JSESSIONID=7B74EF74C82FA22B3962CE8D46CD5967; Path=/; HttpOnly
+Location=http://localhost:56290/salas;jsessionid=7B74EF74C82FA22B3962CE8D46CD5967
+Content-Language=pt-BR
+Content-Length=0
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.java:569)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.java:932)
+	at io.restassured.internal.ResponseSpecificationImpl.header(ResponseSpecificationImpl.java:219)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.header(ValidatableResponseOptionsImpl.java:114)
+	at br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao.sessaoNaoApareceNaUrl(SegurancaWebIT.java:136)
+
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.546 s -- in Segurança: interface web
+[INFO] Running Segurança: XSS no navegador
+2026-11-22T02:15:29.769-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT]: XssNavegadorSistemaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.769-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT
+2026-11-22T02:15:29.769-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT]: XssNavegadorSistemaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.769-03:00  INFO 1472 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.sistema.TesteSistemaBase]: TesteSistemaBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:15:29.769-03:00  INFO 1472 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT
+2026-11-22T02:15:30.522-03:00  WARN 1472 --- [salaprecisa] [           main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 158
+2026-11-22T02:15:30.522-03:00  WARN 1472 --- [salaprecisa] [           main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 158.0.4370.33. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.43.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.831 s -- in Segurança: XSS no navegador
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   SegurancaApiIT.tipoDeConteudoNaoSuportado 1 expectation failed.
+Expected status code <415> but was <500>.
+
+[ERROR]   SegurancaWebIT.cabecalhosPresentes(String)[1] 1 expectation failed.
+Expected header "X-Content-Type-Options" was not "nosniff", was "null". Headers are:
+Content-Type=text/html;charset=UTF-8
+Content-Language=pt-BR
+Transfer-Encoding=chunked
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+[ERROR]   SegurancaWebIT.cabecalhosPresentes(String)[2] 1 expectation failed.
+Expected header "X-Content-Type-Options" was not "nosniff", was "null". Headers are:
+Content-Type=text/html;charset=UTF-8
+Content-Language=pt-BR
+Transfer-Encoding=chunked
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+[ERROR]   SegurancaWebIT.cabecalhosPresentes(String)[3] 1 expectation failed.
+Expected header "X-Content-Type-Options" was not "nosniff", was "null". Headers are:
+Content-Type=application/json
+Content-Length=2
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+[ERROR]   SegurancaWebIT.cabecalhosPresentes(String)[4] 1 expectation failed.
+Expected header "X-Content-Type-Options" was not "nosniff", was "null". Headers are:
+Last-Modified=Sun, 22 Nov 2026 05:15:15 GMT
+Accept-Ranges=bytes
+Content-Type=text/css
+Content-Length=2084
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+[ERROR]   SegurancaWebIT.cookieDeSessaoProtegido 1 expectation failed.
+Expected header "Set-Cookie" was not a string containing "SameSite=Lax", was "JSESSIONID=5F085DE635D219BA4241687D77C2C574; Path=/; HttpOnly". Headers are:
+Set-Cookie=JSESSIONID=5F085DE635D219BA4241687D77C2C574; Path=/; HttpOnly
+Location=http://localhost:56290/salas;jsessionid=5F085DE635D219BA4241687D77C2C574
+Content-Language=pt-BR
+Content-Length=0
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+[ERROR]   SegurancaWebIT.sessaoNaoApareceNaUrl 1 expectation failed.
+Expected header "Location" was not not a string containing "jsessionid", was "http://localhost:56290/salas;jsessionid=7B74EF74C82FA22B3962CE8D46CD5967". Headers are:
+Set-Cookie=JSESSIONID=7B74EF74C82FA22B3962CE8D46CD5967; Path=/; HttpOnly
+Location=http://localhost:56290/salas;jsessionid=7B74EF74C82FA22B3962CE8D46CD5967
+Content-Language=pt-BR
+Content-Length=0
+Date=Sun, 22 Nov 2026 05:15:29 GMT
+Keep-Alive=timeout=60
+Connection=keep-alive
+
+[INFO] 
+[ERROR] Tests run: 36, Failures: 7, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.960 s
+[INFO] Finished at: 2026-11-22T02:15:33-03:00
+[INFO] ------------------------------------------------------------------------

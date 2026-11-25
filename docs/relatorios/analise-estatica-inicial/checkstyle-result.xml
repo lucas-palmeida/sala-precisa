@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="12.3.1">
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\api\ErroResponse.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\api\ReservaApiController.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\api\ReservaRequest.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\api\ReservaResponse.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\api\SalaApiController.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\api\SalaRequest.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\api\SalaResponse.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\api\TratadorErrosApi.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\config\AgendamentoConfig.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\config\ClockConfig.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\dominio\Reserva.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\dominio\Sala.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\dominio\StatusReserva.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\dominio\TipoSala.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\excecao\ConflitoReservaException.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\excecao\RecursoNaoEncontradoException.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\excecao\RegraNegocioException.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\repositorio\ReservaRepository.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\repositorio\SalaRepository.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\SalaprecisaApplication.java">
+<error line="6" column="1" severity="error" message="Classes utilitárias não deveriam ter construtores públicos ou com visibilidade de pacote." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
+<error line="6" column="1" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
+<error line="9" column="1" severity="error" message="O arquivo contém caracteres de tabulação (esta é a primeira ocorrência)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\servico\EncerramentoReservasJob.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\servico\ReservaService.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\servico\SalaService.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\web\ReservaForm.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\web\ReservaWebController.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\web\SalaForm.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\web\SalaWebController.java">
+</file>
+<file name="C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\main\java\br\edu\ifrs\salaprecisa\web\TratadorErrosWeb.java">
+</file>
+</checkstyle>

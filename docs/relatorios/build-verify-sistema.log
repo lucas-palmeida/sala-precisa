@@ -1,0 +1,694 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24571 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] ----------------------< br.edu.ifrs:salaprecisa >-----------------------
+[INFO] Building salaprecisa 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ salaprecisa ---
+[INFO] Deleting C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target
+[INFO] 
+[INFO] --- jacoco:0.8.16:prepare-agent (jacoco-preparar-agente) @ salaprecisa ---
+[INFO] argLine set to "-javaagent:C:\\Users\\lucas\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\workspace\\validacao-verificacao-sistemas\\salaprecisa\\target\\jacoco.exec"
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ salaprecisa ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 7 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ salaprecisa ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 29 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ salaprecisa ---
+[INFO] skip non existing resourceDirectory C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ salaprecisa ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 25 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ salaprecisa ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running Reserva (entidade)
+[INFO] Running encerrar()
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in encerrar()
+[INFO] Running sobrepoe(inicio, fim)
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.187 s -- in sobrepoe(inicio, fim)
+[INFO] Running cancelar()
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in cancelar()
+[INFO] Running deveSerEncerrada(agora)
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in deveSerEncerrada(agora)
+[INFO] Running estaEmAndamento(agora)
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in estaEmAndamento(agora)
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.332 s -- in Reserva (entidade)
+[INFO] Running Sala (entidade)
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in Sala (entidade)
+[INFO] Running br.edu.ifrs.salaprecisa.SalaprecisaApplicationTests
+02:16:06.341 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.SalaprecisaApplicationTests]: SalaprecisaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:16:06.494 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.SalaprecisaApplicationTests
+02:16:06.620 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.SalaprecisaApplicationTests]: SalaprecisaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:16:06.620 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.SalaprecisaApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.3)
+
+2026-11-22T02:16:06.962-03:00  INFO 14868 --- [salaprecisa] [           main] b.e.i.s.SalaprecisaApplicationTests      : Starting SalaprecisaApplicationTests using Java 17.0.21.1 with PID 14868 (started by lucas in C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa)
+2026-11-22T02:16:06.966-03:00  INFO 14868 --- [salaprecisa] [           main] b.e.i.s.SalaprecisaApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2026-11-22T02:16:07.907-03:00  INFO 14868 --- [salaprecisa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-22T02:16:07.979-03:00  INFO 14868 --- [salaprecisa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
+2026-11-22T02:16:08.535-03:00  INFO 14868 --- [salaprecisa] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-22T02:16:08.631-03:00  INFO 14868 --- [salaprecisa] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.15.Final
+2026-11-22T02:16:09.203-03:00  INFO 14868 --- [salaprecisa] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-22T02:16:09.246-03:00  INFO 14868 --- [salaprecisa] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-22T02:16:09.525-03:00  INFO 14868 --- [salaprecisa] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:salaprecisa user=SA
+2026-11-22T02:16:09.525-03:00  INFO 14868 --- [salaprecisa] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-22T02:16:09.626-03:00  INFO 14868 --- [salaprecisa] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:salaprecisa]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: SALAPRECISA/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-22T02:16:10.735-03:00  INFO 14868 --- [salaprecisa] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-22T02:16:10.801-03:00  INFO 14868 --- [salaprecisa] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-22T02:16:10.894-03:00  INFO 14868 --- [salaprecisa] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-22T02:16:12.414-03:00  INFO 14868 --- [salaprecisa] [           main] b.e.i.s.SalaprecisaApplicationTests      : Started SalaprecisaApplicationTests in 5.733 seconds (process running for 7.716)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.759 s -- in br.edu.ifrs.salaprecisa.SalaprecisaApplicationTests
+[INFO] Running EncerramentoReservasJob
+2026-11-22T02:16:13.059-03:00  INFO 14868 --- [salaprecisa] [           main] b.e.i.s.servico.EncerramentoReservasJob  : 3 reserva(s) encerrada(s) automaticamente.
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.309 s -- in EncerramentoReservasJob
+[INFO] Running ReservaService
+[INFO] Running cancelar
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.316 s -- in cancelar
+[INFO] Running encerrarReservasVencidas
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in encerrarReservasVencidas
+[INFO] Running consultas
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in consultas
+[INFO] Running criar
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 s -- in criar
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.433 s -- in ReservaService
+[INFO] Running SalaService
+[INFO] Running desativar / ativar
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in desativar / ativar
+[INFO] Running consultas
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in consultas
+[INFO] Running cadastrar
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s -- in cadastrar
+[INFO] Running atualizar
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in atualizar
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s -- in SalaService
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 91, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco:0.8.16:report (jacoco-relatorio) @ salaprecisa ---
+[INFO] Loading execution data file C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\jacoco.exec
+[INFO] Analyzed bundle 'salaprecisa' with 27 classes
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ salaprecisa ---
+[INFO] Building jar: C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\salaprecisa-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.3:repackage (repackage) @ salaprecisa ---
+[INFO] Replacing main artifact C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\salaprecisa-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\salaprecisa-0.0.1-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- jacoco:0.8.16:prepare-agent-integration (jacoco-preparar-agente-componente) @ salaprecisa ---
+[INFO] argLine set to "-javaagent:C:\\Users\\lucas\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\workspace\\validacao-verificacao-sistemas\\salaprecisa\\target\\jacoco-it.exec"
+[INFO] 
+[INFO] --- failsafe:3.5.6:integration-test (default) @ salaprecisa ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running API de reservas (/api/reservas)
+02:16:16.477 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT]: ReservaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:16:16.688 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT
+02:16:16.863 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT]: ReservaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:16:16.863 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT
+[INFO] Running PATCH /api/reservas/{id}/cancelar
+02:16:16.914 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$Cancelar]: Cancelar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:16:16.915 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$Cancelar
+02:16:16.915 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$Cancelar]: Cancelar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:16:16.915 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT]: ReservaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:16:16.915 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$Cancelar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.3)
+
+2026-11-22T02:16:17.341-03:00  INFO 18344 --- [salaprecisa] [           main] b.e.i.s.api.ReservaApiIT$Cancelar        : Starting ReservaApiIT.Cancelar using Java 17.0.21.1 with PID 18344 (started by lucas in C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa)
+2026-11-22T02:16:17.341-03:00  INFO 18344 --- [salaprecisa] [           main] b.e.i.s.api.ReservaApiIT$Cancelar        : No active profile set, falling back to 1 default profile: "default"
+2026-11-22T02:16:18.282-03:00  INFO 18344 --- [salaprecisa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-22T02:16:18.354-03:00  INFO 18344 --- [salaprecisa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 2 JPA repository interfaces.
+2026-11-22T02:16:19.030-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-11-22T02:16:19.046-03:00  INFO 18344 --- [salaprecisa] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-22T02:16:19.046-03:00  INFO 18344 --- [salaprecisa] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-22T02:16:19.118-03:00  INFO 18344 --- [salaprecisa] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1485 ms
+2026-11-22T02:16:19.356-03:00  INFO 18344 --- [salaprecisa] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-22T02:16:19.434-03:00  INFO 18344 --- [salaprecisa] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.15.Final
+2026-11-22T02:16:19.989-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-22T02:16:20.033-03:00  INFO 18344 --- [salaprecisa] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-22T02:16:20.325-03:00  INFO 18344 --- [salaprecisa] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:salaprecisa user=SA
+2026-11-22T02:16:20.325-03:00  INFO 18344 --- [salaprecisa] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-22T02:16:20.407-03:00  INFO 18344 --- [salaprecisa] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:salaprecisa]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: SALAPRECISA/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-22T02:16:21.489-03:00  INFO 18344 --- [salaprecisa] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-22T02:16:21.558-03:00  INFO 18344 --- [salaprecisa] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-22T02:16:21.637-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-22T02:16:23.027-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 63851 (http) with context path '/'
+2026-11-22T02:16:23.042-03:00  INFO 18344 --- [salaprecisa] [           main] b.e.i.s.api.ReservaApiIT$Cancelar        : Started ReservaApiIT.Cancelar in 6.058 seconds (process running for 8.008)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-11-22T02:16:23.699-03:00  INFO 18344 --- [salaprecisa] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-22T02:16:23.699-03:00  INFO 18344 --- [salaprecisa] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-22T02:16:23.699-03:00  INFO 18344 --- [salaprecisa] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.811 s -- in PATCH /api/reservas/{id}/cancelar
+[INFO] Running POST /api/reservas — validações (400/404)
+2026-11-22T02:16:24.710-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$Validacoes]: Validacoes does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:24.715-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$Validacoes
+2026-11-22T02:16:24.715-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$Validacoes]: Validacoes does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:24.715-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT]: ReservaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:24.715-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$Validacoes
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.273 s -- in POST /api/reservas — validações (400/404)
+[INFO] Running GET /api/reservas
+2026-11-22T02:16:24.988-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$Consultar]: Consultar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:24.988-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$Consultar
+2026-11-22T02:16:24.988-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$Consultar]: Consultar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:24.988-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT]: ReservaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:24.988-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$Consultar
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.167 s -- in GET /api/reservas
+[INFO] Running POST /api/reservas — sucesso
+2026-11-22T02:16:25.150-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$CriarComSucesso]: CriarComSucesso does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.150-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$CriarComSucesso
+2026-11-22T02:16:25.150-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$CriarComSucesso]: CriarComSucesso does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.150-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT]: ReservaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.150-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$CriarComSucesso
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.155 s -- in POST /api/reservas — sucesso
+[INFO] Running Encerramento automático (RF07)
+2026-11-22T02:16:25.305-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$EncerramentoAutomatico]: EncerramentoAutomatico does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.305-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$EncerramentoAutomatico
+2026-11-22T02:16:25.317-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$EncerramentoAutomatico]: EncerramentoAutomatico does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.317-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT]: ReservaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.318-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$EncerramentoAutomatico
+2026-11-22T02:16:25.353-03:00  INFO 18344 --- [salaprecisa] [           main] b.e.i.s.servico.EncerramentoReservasJob  : 1 reserva(s) encerrada(s) automaticamente.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 s -- in Encerramento automático (RF07)
+[INFO] Running POST /api/reservas — conflito (409)
+2026-11-22T02:16:25.403-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$Conflito]: Conflito does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.403-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$Conflito
+2026-11-22T02:16:25.404-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT$Conflito]: Conflito does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.404-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.ReservaApiIT]: ReservaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.405-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.ReservaApiIT$Conflito
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.292 s -- in POST /api/reservas — conflito (409)
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.576 s -- in API de reservas (/api/reservas)
+[INFO] Running API de salas (/api/salas)
+2026-11-22T02:16:25.692-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT]: SalaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.698-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT
+2026-11-22T02:16:25.698-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT]: SalaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.698-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT
+[INFO] Running GET /api/salas
+2026-11-22T02:16:25.702-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$Consultar]: Consultar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.702-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$Consultar
+2026-11-22T02:16:25.702-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$Consultar]: Consultar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.702-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT]: SalaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.702-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$Consultar
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.232 s -- in GET /api/salas
+[INFO] Running POST /api/salas
+2026-11-22T02:16:25.936-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$Cadastrar]: Cadastrar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.936-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$Cadastrar
+2026-11-22T02:16:25.936-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$Cadastrar]: Cadastrar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.936-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT]: SalaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:25.936-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$Cadastrar
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.144 s -- in POST /api/salas
+[INFO] Running PUT /api/salas/{id}
+2026-11-22T02:16:26.080-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$Atualizar]: Atualizar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.091-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$Atualizar
+2026-11-22T02:16:26.091-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$Atualizar]: Atualizar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.091-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT]: SalaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.091-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$Atualizar
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 s -- in PUT /api/salas/{id}
+[INFO] Running GET /api/salas/{id}/reservas
+2026-11-22T02:16:26.217-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$ReservasDaSala]: ReservasDaSala does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.217-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$ReservasDaSala
+2026-11-22T02:16:26.217-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$ReservasDaSala]: ReservasDaSala does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.217-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT]: SalaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.217-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$ReservasDaSala
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in GET /api/salas/{id}/reservas
+[INFO] Running PATCH /api/salas/{id}/desativar e /ativar
+2026-11-22T02:16:26.264-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$DesativarAtivar]: DesativarAtivar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.264-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$DesativarAtivar
+2026-11-22T02:16:26.266-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT$DesativarAtivar]: DesativarAtivar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.266-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.api.SalaApiIT]: SalaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.266-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.api.SalaApiIT$DesativarAtivar
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s -- in PATCH /api/salas/{id}/desativar e /ativar
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.627 s -- in API de salas (/api/salas)
+[INFO] Running ReservaRepository (componente de persistência)
+2026-11-22T02:16:26.327-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT]: ReservaRepositoryIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.351-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT
+2026-11-22T02:16:26.359-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT]: ReservaRepositoryIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.367-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT
+[INFO] Running idsSalasOcupadas
+2026-11-22T02:16:26.367-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$IdsSalasOcupadas]: IdsSalasOcupadas does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.383-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$IdsSalasOcupadas
+2026-11-22T02:16:26.383-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$IdsSalasOcupadas]: IdsSalasOcupadas does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.383-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT]: ReservaRepositoryIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.390-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$IdsSalasOcupadas
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.3)
+
+2026-11-22T02:16:26.418-03:00  INFO 18344 --- [salaprecisa] [           main] s.r.ReservaRepositoryIT$IdsSalasOcupadas : Starting ReservaRepositoryIT.IdsSalasOcupadas using Java 17.0.21.1 with PID 18344 (started by lucas in C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa)
+2026-11-22T02:16:26.418-03:00  INFO 18344 --- [salaprecisa] [           main] s.r.ReservaRepositoryIT$IdsSalasOcupadas : No active profile set, falling back to 1 default profile: "default"
+2026-11-22T02:16:26.486-03:00  INFO 18344 --- [salaprecisa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-22T02:16:26.506-03:00  INFO 18344 --- [salaprecisa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 2 JPA repository interfaces.
+2026-11-22T02:16:26.516-03:00  INFO 18344 --- [salaprecisa] [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2026-11-22T02:16:26.535-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:005c839a-5618-4f3c-b226-95803bf61868;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-11-22T02:16:26.554-03:00  INFO 18344 --- [salaprecisa] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-22T02:16:26.585-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-22T02:16:26.587-03:00  INFO 18344 --- [salaprecisa] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:005c839a-5618-4f3c-b226-95803bf61868]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 005C839A-5618-4F3C-B226-95803BF61868/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-22T02:16:26.626-03:00  INFO 18344 --- [salaprecisa] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists reserva cascade 
+Hibernate: drop table if exists sala cascade 
+Hibernate: create table reserva (fim timestamp(6) not null, id bigint generated by default as identity, inicio timestamp(6) not null, sala_id bigint not null, solicitante varchar(100) not null, status enum ('ATIVA','CANCELADA','ENCERRADA') not null, primary key (id))
+Hibernate: create table sala (ativa boolean not null, capacidade integer not null, id bigint generated by default as identity, nome varchar(100) not null unique, tipo enum ('AUDITORIO','LABORATORIO','OUTRO','SALA_REUNIAO') not null, primary key (id))
+Hibernate: alter table if exists reserva add constraint FKrb7m5fot7vm8u2d83p0im7ekw foreign key (sala_id) references sala
+2026-11-22T02:16:26.637-03:00  INFO 18344 --- [salaprecisa] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-22T02:16:26.677-03:00  INFO 18344 --- [salaprecisa] [           main] s.r.ReservaRepositoryIT$IdsSalasOcupadas : Started ReservaRepositoryIT.IdsSalasOcupadas in 0.287 seconds (process running for 11.643)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: update reserva set fim=?,inicio=?,sala_id=?,solicitante=?,status=? where id=?
+Hibernate: select distinct r1_0.sala_id from reserva r1_0 where r1_0.status=? and r1_0.inicio<=? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select distinct r1_0.sala_id from reserva r1_0 where r1_0.status=? and r1_0.inicio<=? and r1_0.fim>?
+Hibernate: select distinct r1_0.sala_id from reserva r1_0 where r1_0.status=? and r1_0.inicio<=? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select distinct r1_0.sala_id from reserva r1_0 where r1_0.status=? and r1_0.inicio<=? and r1_0.fim>?
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.442 s -- in idsSalasOcupadas
+[INFO] Running existeReservaSobreposta
+2026-11-22T02:16:26.816-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$ExisteReservaSobreposta]: ExisteReservaSobreposta does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.826-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$ExisteReservaSobreposta
+2026-11-22T02:16:26.826-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$ExisteReservaSobreposta]: ExisteReservaSobreposta does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.826-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT]: ReservaRepositoryIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:26.837-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$ExisteReservaSobreposta
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: update reserva set fim=?,inicio=?,sala_id=?,solicitante=?,status=? where id=?
+Hibernate: update reserva set fim=?,inicio=?,sala_id=?,solicitante=?,status=? where id=?
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select count(r1_0.id)>0 from reserva r1_0 where r1_0.sala_id=? and r1_0.status=? and r1_0.inicio<? and r1_0.fim>?
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.237 s -- in existeReservaSobreposta
+[INFO] Running consultas derivadas
+2026-11-22T02:16:27.046-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$ConsultasDerivadas]: ConsultasDerivadas does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.062-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$ConsultasDerivadas
+2026-11-22T02:16:27.062-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$ConsultasDerivadas]: ConsultasDerivadas does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.062-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT]: ReservaRepositoryIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.062-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.ReservaRepositoryIT$ConsultasDerivadas
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select r1_0.id,r1_0.fim,r1_0.inicio,r1_0.sala_id,r1_0.solicitante,r1_0.status from reserva r1_0 where r1_0.sala_id=? order by r1_0.inicio
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select r1_0.id,r1_0.fim,r1_0.inicio,r1_0.sala_id,r1_0.solicitante,r1_0.status from reserva r1_0 where r1_0.status=? and r1_0.fim<=?
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: insert into reserva (fim,inicio,sala_id,solicitante,status,id) values (?,?,?,?,?,default)
+Hibernate: select r1_0.id,r1_0.fim,r1_0.inicio,r1_0.sala_id,r1_0.solicitante,r1_0.status from reserva r1_0 order by r1_0.inicio desc
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s -- in consultas derivadas
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.808 s -- in ReservaRepository (componente de persistência)
+[INFO] Running SalaRepository (componente de persistência)
+2026-11-22T02:16:27.127-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.SalaRepositoryIT]: SalaRepositoryIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.144-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.SalaRepositoryIT
+2026-11-22T02:16:27.144-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.repositorio.SalaRepositoryIT]: SalaRepositoryIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.160-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.repositorio.SalaRepositoryIT
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: select s1_0.id,s1_0.ativa,s1_0.capacidade,s1_0.nome,s1_0.tipo from sala s1_0 order by s1_0.nome
+Hibernate: select s1_0.id,s1_0.ativa,s1_0.capacidade,s1_0.nome,s1_0.tipo from sala s1_0 where s1_0.ativa=true order by s1_0.nome
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+2026-11-22T02:16:27.194-03:00  WARN 18344 --- [salaprecisa] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 23505, SQLState: 23505
+2026-11-22T02:16:27.194-03:00  WARN 18344 --- [salaprecisa] [           main] org.hibernate.orm.jdbc.error             : Unique index or primary key violation: "PUBLIC.CONSTRAINT_2 INDEX PUBLIC.CONSTRAINT_INDEX_2 ON PUBLIC.SALA(NOME NULLS FIRST) VALUES ( /* 38 */ 'Lab 101' )"; SQL statement:
+insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default) [23505-240]
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: select s1_0.id from sala s1_0 where upper(s1_0.nome)=upper(?) and s1_0.id<>? fetch first ? rows only
+Hibernate: select s1_0.id from sala s1_0 where upper(s1_0.nome)=upper(?) and s1_0.id<>? fetch first ? rows only
+Hibernate: insert into sala (ativa,capacidade,nome,tipo,id) values (?,?,?,?,default)
+Hibernate: select s1_0.id from sala s1_0 where upper(s1_0.nome)=upper(?) fetch first ? rows only
+Hibernate: select s1_0.id from sala s1_0 where upper(s1_0.nome)=upper(?) fetch first ? rows only
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s -- in SalaRepository (componente de persistência)
+[INFO] Running Segurança: API REST
+2026-11-22T02:16:27.245-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.252-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT
+2026-11-22T02:16:27.252-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.252-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT
+[INFO] Running Exposição de informações
+2026-11-22T02:16:27.252-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$ExposicaoDeInformacoes]: ExposicaoDeInformacoes does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.260-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$ExposicaoDeInformacoes
+2026-11-22T02:16:27.261-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$ExposicaoDeInformacoes]: ExposicaoDeInformacoes does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.261-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.261-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$ExposicaoDeInformacoes
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 s -- in Exposição de informações
+[INFO] Running Entradas abusivas e atribuição em massa
+2026-11-22T02:16:27.367-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$EntradasAbusivas]: EntradasAbusivas does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.367-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$EntradasAbusivas
+2026-11-22T02:16:27.367-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$EntradasAbusivas]: EntradasAbusivas does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.367-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.367-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$EntradasAbusivas
+2026-11-22T02:16:27.489-03:00  WARN 18344 --- [salaprecisa] [-auto-1-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.149 s -- in Entradas abusivas e atribuição em massa
+[INFO] Running Injeção de SQL
+2026-11-22T02:16:27.515-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$InjecaoSql]: InjecaoSql does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.515-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$InjecaoSql
+2026-11-22T02:16:27.515-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$InjecaoSql]: InjecaoSql does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.515-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT]: SegurancaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.515-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaApiIT$InjecaoSql
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.219 s -- in Injeção de SQL
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.499 s -- in Segurança: API REST
+[INFO] Running Segurança: interface web
+2026-11-22T02:16:27.742-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.742-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT
+2026-11-22T02:16:27.742-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.742-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT
+[INFO] Running Cabeçalhos de segurança HTTP
+2026-11-22T02:16:27.742-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos]: Cabecalhos does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.742-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos
+2026-11-22T02:16:27.742-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos]: Cabecalhos does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.742-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:27.742-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Cabecalhos
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.341 s -- in Cabeçalhos de segurança HTTP
+[INFO] Running Cross-Site Scripting (XSS)
+2026-11-22T02:16:28.083-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Xss]: Xss does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:28.086-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Xss
+2026-11-22T02:16:28.086-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Xss]: Xss does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:28.088-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:28.088-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Xss
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 s -- in Cross-Site Scripting (XSS)
+[INFO] Running Identificador de sessão
+2026-11-22T02:16:28.175-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao]: Sessao does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:28.175-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao
+2026-11-22T02:16:28.183-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao]: Sessao does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:28.183-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT]: SegurancaWebIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:28.184-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.SegurancaWebIT$Sessao
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s -- in Identificador de sessão
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.505 s -- in Segurança: interface web
+[INFO] Running Segurança: XSS no navegador
+2026-11-22T02:16:28.247-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT]: XssNavegadorSistemaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:28.247-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT
+2026-11-22T02:16:28.247-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT]: XssNavegadorSistemaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:28.247-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.sistema.TesteSistemaBase]: TesteSistemaBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:28.247-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.seguranca.XssNavegadorSistemaIT
+2026-11-22T02:16:28.994-03:00  WARN 18344 --- [salaprecisa] [           main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 158
+2026-11-22T02:16:28.994-03:00  WARN 18344 --- [salaprecisa] [           main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 158.0.4370.33. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.43.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.836 s -- in Segurança: XSS no navegador
+[INFO] Running Sistema: gerenciamento de salas
+2026-11-22T02:16:31.086-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.sistema.GerenciarSalasSistemaIT]: GerenciarSalasSistemaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:31.088-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.sistema.GerenciarSalasSistemaIT
+2026-11-22T02:16:31.088-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.sistema.GerenciarSalasSistemaIT]: GerenciarSalasSistemaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:31.088-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.sistema.TesteSistemaBase]: TesteSistemaBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:31.088-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.sistema.GerenciarSalasSistemaIT
+2026-11-22T02:16:31.548-03:00  WARN 18344 --- [salaprecisa] [           main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 158
+2026-11-22T02:16:31.548-03:00  WARN 18344 --- [salaprecisa] [           main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 158.0.4370.33. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.43.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.481 s -- in Sistema: gerenciamento de salas
+[INFO] Running Sistema: reserva de salas
+2026-11-22T02:16:37.567-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.sistema.ReservarSalaSistemaIT]: ReservarSalaSistemaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:37.570-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.sistema.ReservarSalaSistemaIT
+2026-11-22T02:16:37.570-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.sistema.ReservarSalaSistemaIT]: ReservarSalaSistemaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:37.570-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.sistema.TesteSistemaBase]: TesteSistemaBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:37.572-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.sistema.ReservarSalaSistemaIT
+2026-11-22T02:16:38.023-03:00  WARN 18344 --- [salaprecisa] [           main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 158
+2026-11-22T02:16:38.023-03:00  WARN 18344 --- [salaprecisa] [           main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 158.0.4370.33. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.43.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2026-11-22T02:16:47.887-03:00  INFO 18344 --- [salaprecisa] [           main] b.e.i.s.servico.EncerramentoReservasJob  : 1 reserva(s) encerrada(s) automaticamente.
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.52 s -- in Sistema: reserva de salas
+[INFO] Running Telas de reservas (componente web)
+2026-11-22T02:16:49.091-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT]: ReservaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:49.116-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT
+2026-11-22T02:16:49.116-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT]: ReservaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:49.124-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT
+[INFO] Running POST /reservas/{id}/cancelar
+2026-11-22T02:16:49.124-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Cancelar]: Cancelar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:49.129-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Cancelar
+2026-11-22T02:16:49.129-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Cancelar]: Cancelar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:49.131-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT]: ReservaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:49.137-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Cancelar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.3)
+
+2026-11-22T02:16:49.159-03:00  INFO 18344 --- [salaprecisa] [           main] .e.i.s.w.ReservaWebControllerIT$Cancelar : Starting ReservaWebControllerIT.Cancelar using Java 17.0.21.1 with PID 18344 (started by lucas in C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa)
+2026-11-22T02:16:49.159-03:00  INFO 18344 --- [salaprecisa] [           main] .e.i.s.w.ReservaWebControllerIT$Cancelar : No active profile set, falling back to 1 default profile: "default"
+2026-11-22T02:16:49.824-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-22T02:16:49.824-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-22T02:16:49.824-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-22T02:16:49.883-03:00  INFO 18344 --- [salaprecisa] [           main] .e.i.s.w.ReservaWebControllerIT$Cancelar : Started ReservaWebControllerIT.Cancelar in 0.738 seconds (process running for 34.849)
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.962 s -- in POST /reservas/{id}/cancelar
+[INFO] Running GET /reservas/nova
+2026-11-22T02:16:50.093-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Formulario]: Formulario does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.114-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Formulario
+2026-11-22T02:16:50.114-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Formulario]: Formulario does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.117-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT]: ReservaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.124-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Formulario
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.236 s -- in GET /reservas/nova
+[INFO] Running GET /reservas
+2026-11-22T02:16:50.329-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Listar]: Listar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.345-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Listar
+2026-11-22T02:16:50.347-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Listar]: Listar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.347-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT]: ReservaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.355-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Listar
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.131 s -- in GET /reservas
+[INFO] Running POST /reservas
+2026-11-22T02:16:50.463-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Criar]: Criar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.471-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Criar
+2026-11-22T02:16:50.471-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Criar]: Criar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.475-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT]: ReservaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.484-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.ReservaWebControllerIT$Criar
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.269 s -- in POST /reservas
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.648 s -- in Telas de reservas (componente web)
+[INFO] Running Telas de salas (componente web)
+2026-11-22T02:16:50.745-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT]: SalaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.752-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT
+2026-11-22T02:16:50.754-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT]: SalaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:50.762-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.3)
+
+2026-11-22T02:16:50.802-03:00  INFO 18344 --- [salaprecisa] [           main] b.e.i.s.web.SalaWebControllerIT          : Starting SalaWebControllerIT using Java 17.0.21.1 with PID 18344 (started by lucas in C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa)
+2026-11-22T02:16:50.802-03:00  INFO 18344 --- [salaprecisa] [           main] b.e.i.s.web.SalaWebControllerIT          : No active profile set, falling back to 1 default profile: "default"
+2026-11-22T02:16:51.073-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-22T02:16:51.073-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-22T02:16:51.073-03:00  INFO 18344 --- [salaprecisa] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-22T02:16:51.085-03:00  INFO 18344 --- [salaprecisa] [           main] b.e.i.s.web.SalaWebControllerIT          : Started SalaWebControllerIT in 0.317 seconds (process running for 36.052)
+[INFO] Running edição (GET /salas/{id}/editar e POST /salas/{id})
+2026-11-22T02:16:51.104-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Edicao]: Edicao does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.111-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Edicao
+2026-11-22T02:16:51.116-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Edicao]: Edicao does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.116-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT]: SalaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.121-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Edicao
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.287 s -- in edição (GET /salas/{id}/editar e POST /salas/{id})
+[INFO] Running desativar / ativar
+2026-11-22T02:16:51.392-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$DesativarAtivar]: DesativarAtivar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.403-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$DesativarAtivar
+2026-11-22T02:16:51.404-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$DesativarAtivar]: DesativarAtivar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.404-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT]: SalaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.406-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$DesativarAtivar
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s -- in desativar / ativar
+[INFO] Running GET /salas
+2026-11-22T02:16:51.481-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Listar]: Listar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.498-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Listar
+2026-11-22T02:16:51.498-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Listar]: Listar does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.498-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT]: SalaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.508-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Listar
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s -- in GET /salas
+[INFO] Running cadastro (GET /salas/nova e POST /salas)
+2026-11-22T02:16:51.611-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Cadastro]: Cadastro does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.617-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Cadastro
+2026-11-22T02:16:51.620-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Cadastro]: Cadastro does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.620-03:00  INFO 18344 --- [salaprecisa] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.ifrs.salaprecisa.web.SalaWebControllerIT]: SalaWebControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-22T02:16:51.632-03:00  INFO 18344 --- [salaprecisa] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.ifrs.salaprecisa.SalaprecisaApplication for test class br.edu.ifrs.salaprecisa.web.SalaWebControllerIT$Cadastro
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 s -- in cadastro (GET /salas/nova e POST /salas)
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.048 s -- in Telas de salas (componente web)
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 140, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.5.6:verify (default) @ salaprecisa ---
+[INFO] 
+[INFO] --- jacoco:0.8.16:check (jacoco-verificar-cobertura) @ salaprecisa ---
+[INFO] Loading execution data file C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\jacoco.exec
+[INFO] Analyzed bundle 'salaprecisa' with 27 classes
+[INFO] All coverage checks have been met.
+[INFO] 
+[INFO] --- jacoco:0.8.16:report-integration (jacoco-relatorio-componente) @ salaprecisa ---
+[INFO] Loading execution data file C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\jacoco-it.exec
+[INFO] Analyzed bundle 'salaprecisa' with 27 classes
+[INFO] 
+[INFO] --- jacoco:0.8.16:merge (jacoco-mesclar) @ salaprecisa ---
+[INFO] Loading execution data file C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\jacoco-it.exec
+[INFO] Loading execution data file C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\jacoco.exec
+[INFO] Writing merged execution data to C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\jacoco-consolidado.exec
+[INFO] 
+[INFO] --- jacoco:0.8.16:report (jacoco-relatorio-consolidado) @ salaprecisa ---
+[INFO] Loading execution data file C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\jacoco-consolidado.exec
+[INFO] Analyzed bundle 'salaprecisa' with 27 classes
+[INFO] 
+[INFO] --- jacoco:0.8.16:check (jacoco-verificar-cobertura-consolidada) @ salaprecisa ---
+[INFO] Loading execution data file C:\Users\lucas\OneDrive\Área de Trabalho\workspace\validacao-verificacao-sistemas\salaprecisa\target\jacoco-consolidado.exec
+[INFO] Analyzed bundle 'salaprecisa' with 27 classes
+[INFO] All coverage checks have been met.
+[INFO] 
+[INFO] >>> pmd:3.28.0:check (pmd-verificacao) > :pmd @ salaprecisa >>>
+[INFO] 
+[INFO] --- pmd:3.28.0:pmd (pmd) @ salaprecisa ---
+[INFO] PMD version: 7.17.0
+[WARNING] Unable to find a URL to the parent project. The parent menu will NOT be added.
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.0.0-M9 skin
+[INFO] 
+[INFO] <<< pmd:3.28.0:check (pmd-verificacao) < :pmd @ salaprecisa <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.28.0:check (pmd-verificacao) @ salaprecisa ---
+[INFO] 
+[INFO] >>> pmd:3.28.0:cpd-check (pmd-verificacao) > :cpd @ salaprecisa >>>
+[INFO] 
+[INFO] --- pmd:3.28.0:cpd (cpd) @ salaprecisa ---
+[WARNING] Unable to find a URL to the parent project. The parent menu will NOT be added.
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.0.0-M9 skin
+[INFO] 
+[INFO] <<< pmd:3.28.0:cpd-check (pmd-verificacao) < :cpd @ salaprecisa <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.28.0:cpd-check (pmd-verificacao) @ salaprecisa ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-verificacao) @ salaprecisa ---
+[WARNING] Could not transfer metadata /.meta/prefixes.txt from/to jvnet-nexus-releases (https://maven.java.net/content/repositories/releases/): (certificate_expired) PKIX path validation failed: java.security.cert.CertPathValidatorException: validity check failed
+[INFO] Iniciando a auditoria...
+Auditoria completa.
+[INFO] You have 0 Checkstyle violations.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  57.785 s
+[INFO] Finished at: 2026-11-22T02:16:57-03:00
+[INFO] ------------------------------------------------------------------------

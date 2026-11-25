@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReservaApiController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">salaprecisa</a> &gt; <a href="index.source.html" class="el_package">br.edu.ifrs.salaprecisa.api</a> &gt; <span class="el_source">ReservaApiController.java</span></div><h1>ReservaApiController.java</h1><pre class="source lang-java linenums">package br.edu.ifrs.salaprecisa.api;
+
+import br.edu.ifrs.salaprecisa.dominio.Reserva;
+import br.edu.ifrs.salaprecisa.servico.ReservaService;
+import jakarta.validation.Valid;
+import java.net.URI;
+import java.util.List;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * API REST de reservas.
+ */
+@RestController
+@RequestMapping(&quot;/api/reservas&quot;)
+public class ReservaApiController {
+
+    private final ReservaService reservaService;
+
+<span class="fc" id="L26">    public ReservaApiController(ReservaService reservaService) {</span>
+<span class="fc" id="L27">        this.reservaService = reservaService;</span>
+<span class="fc" id="L28">    }</span>
+
+    @GetMapping
+    public List&lt;ReservaResponse&gt; listar() {
+<span class="nc" id="L32">        return reservaService.listar().stream()</span>
+<span class="nc" id="L33">                .map(ReservaResponse::de)</span>
+<span class="nc" id="L34">                .toList();</span>
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public ReservaResponse buscar(@PathVariable Long id) {
+<span class="nc" id="L39">        return ReservaResponse.de(reservaService.buscarPorId(id));</span>
+    }
+
+    @PostMapping
+    public ResponseEntity&lt;ReservaResponse&gt; criar(@Valid @RequestBody ReservaRequest request) {
+<span class="nc" id="L44">        Reserva reserva = reservaService.criar(request.salaId(), request.solicitante(),</span>
+<span class="nc" id="L45">                request.inicio(), request.fim());</span>
+<span class="nc" id="L46">        return ResponseEntity.created(URI.create(&quot;/api/reservas/&quot; + reserva.getId()))</span>
+<span class="nc" id="L47">                .body(ReservaResponse.de(reserva));</span>
+    }
+
+    @PatchMapping(&quot;/{id}/cancelar&quot;)
+    public ReservaResponse cancelar(@PathVariable Long id) {
+<span class="nc" id="L52">        return ReservaResponse.de(reservaService.cancelar(id));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

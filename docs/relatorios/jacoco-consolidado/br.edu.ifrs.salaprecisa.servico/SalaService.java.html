@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SalaService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">salaprecisa</a> &gt; <a href="index.source.html" class="el_package">br.edu.ifrs.salaprecisa.servico</a> &gt; <span class="el_source">SalaService.java</span></div><h1>SalaService.java</h1><pre class="source lang-java linenums">package br.edu.ifrs.salaprecisa.servico;
+
+import br.edu.ifrs.salaprecisa.dominio.Sala;
+import br.edu.ifrs.salaprecisa.dominio.StatusReserva;
+import br.edu.ifrs.salaprecisa.dominio.TipoSala;
+import br.edu.ifrs.salaprecisa.excecao.RecursoNaoEncontradoException;
+import br.edu.ifrs.salaprecisa.excecao.RegraNegocioException;
+import br.edu.ifrs.salaprecisa.repositorio.ReservaRepository;
+import br.edu.ifrs.salaprecisa.repositorio.SalaRepository;
+import java.time.Clock;
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Regras de negócio relacionadas ao cadastro de salas.
+ */
+@Service
+public class SalaService {
+
+    /** Capacidade máxima aceita para uma sala. */
+    public static final int CAPACIDADE_MAXIMA = 1000;
+
+    private final SalaRepository salaRepository;
+    private final ReservaRepository reservaRepository;
+    private final Clock clock;
+
+<span class="fc" id="L31">    public SalaService(SalaRepository salaRepository, ReservaRepository reservaRepository, Clock clock) {</span>
+<span class="fc" id="L32">        this.salaRepository = salaRepository;</span>
+<span class="fc" id="L33">        this.reservaRepository = reservaRepository;</span>
+<span class="fc" id="L34">        this.clock = clock;</span>
+<span class="fc" id="L35">    }</span>
+
+    @Transactional
+    public Sala cadastrar(String nome, TipoSala tipo, int capacidade) {
+<span class="fc" id="L39">        String nomeNormalizado = validarDados(nome, tipo, capacidade);</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (salaRepository.existsByNomeIgnoreCase(nomeNormalizado)) {</span>
+<span class="fc" id="L41">            throw new RegraNegocioException(&quot;Já existe uma sala com o nome informado.&quot;);</span>
+        }
+<span class="fc" id="L43">        return salaRepository.save(new Sala(nomeNormalizado, tipo, capacidade));</span>
+    }
+
+    @Transactional
+    public Sala atualizar(Long id, String nome, TipoSala tipo, int capacidade) {
+<span class="fc" id="L48">        Sala sala = buscarPorId(id);</span>
+<span class="fc" id="L49">        String nomeNormalizado = validarDados(nome, tipo, capacidade);</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (salaRepository.existsByNomeIgnoreCaseAndIdNot(nomeNormalizado, id)) {</span>
+<span class="fc" id="L51">            throw new RegraNegocioException(&quot;Já existe uma sala com o nome informado.&quot;);</span>
+        }
+<span class="fc" id="L53">        sala.atualizar(nomeNormalizado, tipo, capacidade);</span>
+<span class="fc" id="L54">        return salaRepository.save(sala);</span>
+    }
+
+    @Transactional
+    public Sala desativar(Long id) {
+<span class="fc" id="L59">        Sala sala = buscarPorId(id);</span>
+<span class="fc" id="L60">        sala.desativar();</span>
+<span class="fc" id="L61">        return salaRepository.save(sala);</span>
+    }
+
+    @Transactional
+    public Sala ativar(Long id) {
+<span class="fc" id="L66">        Sala sala = buscarPorId(id);</span>
+<span class="fc" id="L67">        sala.ativar();</span>
+<span class="fc" id="L68">        return salaRepository.save(sala);</span>
+    }
+
+    @Transactional(readOnly = true)
+    public Sala buscarPorId(Long id) {
+<span class="fc" id="L73">        return salaRepository.findById(id)</span>
+<span class="fc" id="L74">                .orElseThrow(() -&gt; new RecursoNaoEncontradoException(&quot;Sala não encontrada: &quot; + id));</span>
+    }
+
+    @Transactional(readOnly = true)
+    public List&lt;Sala&gt; listar() {
+<span class="fc" id="L79">        return salaRepository.findAllByOrderByNomeAsc();</span>
+    }
+
+    @Transactional(readOnly = true)
+    public List&lt;Sala&gt; listarAtivas() {
+<span class="fc" id="L84">        return salaRepository.findByAtivaTrueOrderByNomeAsc();</span>
+    }
+
+    /** Identificadores das salas ocupadas (com reserva ativa em andamento) neste momento. */
+    @Transactional(readOnly = true)
+    public Set&lt;Long&gt; idsSalasOcupadasAgora() {
+<span class="fc" id="L90">        LocalDateTime agora = LocalDateTime.now(clock);</span>
+<span class="fc" id="L91">        return new HashSet&lt;&gt;(reservaRepository.idsSalasOcupadas(agora, StatusReserva.ATIVA));</span>
+    }
+
+    private String validarDados(String nome, TipoSala tipo, int capacidade) {
+<span class="fc bfc" id="L95" title="All 4 branches covered.">        if (nome == null || nome.isBlank()) {</span>
+<span class="fc" id="L96">            throw new RegraNegocioException(&quot;O nome da sala é obrigatório.&quot;);</span>
+        }
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        if (tipo == null) {</span>
+<span class="fc" id="L99">            throw new RegraNegocioException(&quot;O tipo da sala é obrigatório.&quot;);</span>
+        }
+<span class="fc bfc" id="L101" title="All 4 branches covered.">        if (capacidade &lt; 1 || capacidade &gt; CAPACIDADE_MAXIMA) {</span>
+<span class="fc" id="L102">            throw new RegraNegocioException(</span>
+                    &quot;A capacidade deve estar entre 1 e &quot; + CAPACIDADE_MAXIMA + &quot;.&quot;);
+        }
+<span class="fc" id="L105">        return nome.trim();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

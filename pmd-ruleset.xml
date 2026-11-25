@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Conjunto de regras do PMD usado no projeto SalaPrecisa.
+  Parte das categorias completas e exclui apenas as regras cuja aplicação não faz
+  sentido para o projeto; cada exclusão está justificada em docs/analise-estatica.md.
+-->
+<ruleset name="SalaPrecisa"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>Regras de boas práticas, propensão a erros, design e segurança.</description>
+
+    <rule ref="category/java/bestpractices.xml"/>
+    <rule ref="category/java/errorprone.xml"/>
+    <rule ref="category/java/design.xml">
+        <!--
+          LawOfDemeter: gera falsos positivos em código de mapeamento simples, como
+          reserva.getSala().getNome() ao montar DTOs. Justificativa em docs/analise-estatica.md.
+        -->
+        <exclude name="LawOfDemeter"/>
+        <!--
+          LoosePackageCoupling: só funciona se forem configurados os pacotes a proteger;
+          sem configuração o PMD a descarta com aviso. Não se aplica ao projeto.
+        -->
+        <exclude name="LoosePackageCoupling"/>
+    </rule>
+    <rule ref="category/java/security.xml"/>
+
+</ruleset>

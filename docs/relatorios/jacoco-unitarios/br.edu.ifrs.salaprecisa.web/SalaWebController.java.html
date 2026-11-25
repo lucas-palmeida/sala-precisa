@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SalaWebController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">salaprecisa</a> &gt; <a href="index.source.html" class="el_package">br.edu.ifrs.salaprecisa.web</a> &gt; <span class="el_source">SalaWebController.java</span></div><h1>SalaWebController.java</h1><pre class="source lang-java linenums">package br.edu.ifrs.salaprecisa.web;
+
+import br.edu.ifrs.salaprecisa.dominio.Sala;
+import br.edu.ifrs.salaprecisa.dominio.TipoSala;
+import br.edu.ifrs.salaprecisa.excecao.RegraNegocioException;
+import br.edu.ifrs.salaprecisa.servico.SalaService;
+import jakarta.validation.Valid;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+/**
+ * Telas de cadastro e listagem de salas.
+ */
+@Controller
+public class SalaWebController {
+
+    private static final String URL_SALAS = &quot;/salas&quot;;
+    private static final String VIEW_FORMULARIO = &quot;salas/form&quot;;
+    private static final String REDIRECT_LISTA = &quot;redirect:&quot; + URL_SALAS;
+    private static final String ATRIBUTO_FORM = &quot;salaForm&quot;;
+    private static final String ATRIBUTO_SUCESSO = &quot;sucesso&quot;;
+    private static final String ATRIBUTO_ERRO = &quot;erro&quot;;
+    private static final String TITULO_NOVA = &quot;Nova sala&quot;;
+    private static final String TITULO_EDITAR = &quot;Editar sala&quot;;
+
+    private final SalaService salaService;
+
+<span class="fc" id="L34">    public SalaWebController(SalaService salaService) {</span>
+<span class="fc" id="L35">        this.salaService = salaService;</span>
+<span class="fc" id="L36">    }</span>
+
+    @GetMapping(&quot;/&quot;)
+    public String inicio() {
+<span class="nc" id="L40">        return REDIRECT_LISTA;</span>
+    }
+
+    @GetMapping(URL_SALAS)
+    public String listar(Model model) {
+<span class="nc" id="L45">        model.addAttribute(&quot;salas&quot;, salaService.listar());</span>
+<span class="nc" id="L46">        model.addAttribute(&quot;idsOcupadas&quot;, salaService.idsSalasOcupadasAgora());</span>
+<span class="nc" id="L47">        return &quot;salas/lista&quot;;</span>
+    }
+
+    @GetMapping(URL_SALAS + &quot;/nova&quot;)
+    public String nova(Model model) {
+<span class="nc" id="L52">        model.addAttribute(ATRIBUTO_FORM, new SalaForm());</span>
+<span class="nc" id="L53">        return prepararFormulario(model, TITULO_NOVA, URL_SALAS);</span>
+    }
+
+    @PostMapping(URL_SALAS)
+    public String cadastrar(@Valid @ModelAttribute(ATRIBUTO_FORM) SalaForm form, BindingResult resultado,
+                            Model model, RedirectAttributes redirect) {
+<span class="nc bnc" id="L59" title="All 2 branches missed.">        if (resultado.hasErrors()) {</span>
+<span class="nc" id="L60">            return prepararFormulario(model, TITULO_NOVA, URL_SALAS);</span>
+        }
+        try {
+<span class="nc" id="L63">            salaService.cadastrar(form.getNome(), form.getTipo(), form.getCapacidade());</span>
+<span class="nc" id="L64">        } catch (RegraNegocioException ex) {</span>
+<span class="nc" id="L65">            model.addAttribute(ATRIBUTO_ERRO, ex.getMessage());</span>
+<span class="nc" id="L66">            return prepararFormulario(model, TITULO_NOVA, URL_SALAS);</span>
+<span class="nc" id="L67">        }</span>
+<span class="nc" id="L68">        redirect.addFlashAttribute(ATRIBUTO_SUCESSO, &quot;Sala cadastrada com sucesso.&quot;);</span>
+<span class="nc" id="L69">        return REDIRECT_LISTA;</span>
+    }
+
+    @GetMapping(URL_SALAS + &quot;/{id}/editar&quot;)
+    public String editar(@PathVariable Long id, Model model) {
+<span class="nc" id="L74">        Sala sala = salaService.buscarPorId(id);</span>
+<span class="nc" id="L75">        model.addAttribute(ATRIBUTO_FORM, SalaForm.de(sala));</span>
+<span class="nc" id="L76">        return prepararFormulario(model, TITULO_EDITAR, urlDaSala(id));</span>
+    }
+
+    @PostMapping(URL_SALAS + &quot;/{id}&quot;)
+    public String atualizar(@PathVariable Long id, @Valid @ModelAttribute(ATRIBUTO_FORM) SalaForm form,
+                            BindingResult resultado, Model model, RedirectAttributes redirect) {
+<span class="nc bnc" id="L82" title="All 2 branches missed.">        if (resultado.hasErrors()) {</span>
+<span class="nc" id="L83">            return prepararFormulario(model, TITULO_EDITAR, urlDaSala(id));</span>
+        }
+        try {
+<span class="nc" id="L86">            salaService.atualizar(id, form.getNome(), form.getTipo(), form.getCapacidade());</span>
+<span class="nc" id="L87">        } catch (RegraNegocioException ex) {</span>
+<span class="nc" id="L88">            model.addAttribute(ATRIBUTO_ERRO, ex.getMessage());</span>
+<span class="nc" id="L89">            return prepararFormulario(model, TITULO_EDITAR, urlDaSala(id));</span>
+<span class="nc" id="L90">        }</span>
+<span class="nc" id="L91">        redirect.addFlashAttribute(ATRIBUTO_SUCESSO, &quot;Sala atualizada com sucesso.&quot;);</span>
+<span class="nc" id="L92">        return REDIRECT_LISTA;</span>
+    }
+
+    @PostMapping(URL_SALAS + &quot;/{id}/desativar&quot;)
+    public String desativar(@PathVariable Long id, RedirectAttributes redirect) {
+<span class="nc" id="L97">        salaService.desativar(id);</span>
+<span class="nc" id="L98">        redirect.addFlashAttribute(ATRIBUTO_SUCESSO, &quot;Sala desativada.&quot;);</span>
+<span class="nc" id="L99">        return REDIRECT_LISTA;</span>
+    }
+
+    @PostMapping(URL_SALAS + &quot;/{id}/ativar&quot;)
+    public String ativar(@PathVariable Long id, RedirectAttributes redirect) {
+<span class="nc" id="L104">        salaService.ativar(id);</span>
+<span class="nc" id="L105">        redirect.addFlashAttribute(ATRIBUTO_SUCESSO, &quot;Sala reativada.&quot;);</span>
+<span class="nc" id="L106">        return REDIRECT_LISTA;</span>
+    }
+
+    private static String urlDaSala(Long id) {
+<span class="nc" id="L110">        return URL_SALAS + &quot;/&quot; + id;</span>
+    }
+
+    private String prepararFormulario(Model model, String titulo, String acao) {
+<span class="nc" id="L114">        model.addAttribute(&quot;titulo&quot;, titulo);</span>
+<span class="nc" id="L115">        model.addAttribute(&quot;acao&quot;, acao);</span>
+<span class="nc" id="L116">        model.addAttribute(&quot;tipos&quot;, TipoSala.values());</span>
+<span class="nc" id="L117">        return VIEW_FORMULARIO;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

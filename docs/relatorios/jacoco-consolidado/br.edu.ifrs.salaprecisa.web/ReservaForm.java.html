@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReservaForm.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">salaprecisa</a> &gt; <a href="index.source.html" class="el_package">br.edu.ifrs.salaprecisa.web</a> &gt; <span class="el_source">ReservaForm.java</span></div><h1>ReservaForm.java</h1><pre class="source lang-java linenums">package br.edu.ifrs.salaprecisa.web;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import java.time.LocalDateTime;
+import org.springframework.format.annotation.DateTimeFormat;
+
+/**
+ * Objeto de formulário (tela) para criação de reserva.
+ * O formato de data corresponde ao do campo HTML {@code datetime-local}.
+ *
+ * &lt;p&gt;É intencionalmente uma classe de dados: o Spring MVC preenche os campos pelos
+ * setters e o Thymeleaf os lê pelos getters (supressão justificada em docs/analise-estatica.md).&lt;/p&gt;
+ */
+@SuppressWarnings(&quot;PMD.DataClass&quot;)
+<span class="fc" id="L17">public class ReservaForm {</span>
+
+    private static final String FORMATO_DATA_HORA = &quot;yyyy-MM-dd'T'HH:mm&quot;;
+
+    @NotNull(message = &quot;Selecione a sala.&quot;)
+    private Long salaId;
+
+    @NotBlank(message = &quot;Informe o solicitante.&quot;)
+    @Size(max = 100, message = &quot;O solicitante deve ter no máximo 100 caracteres.&quot;)
+    private String solicitante;
+
+    @NotNull(message = &quot;Informe a data e hora de início.&quot;)
+    @DateTimeFormat(pattern = FORMATO_DATA_HORA)
+    private LocalDateTime inicio;
+
+    @NotNull(message = &quot;Informe a data e hora de fim.&quot;)
+    @DateTimeFormat(pattern = FORMATO_DATA_HORA)
+    private LocalDateTime fim;
+
+    public Long getSalaId() {
+<span class="fc" id="L37">        return salaId;</span>
+    }
+
+    public void setSalaId(Long salaId) {
+<span class="fc" id="L41">        this.salaId = salaId;</span>
+<span class="fc" id="L42">    }</span>
+
+    public String getSolicitante() {
+<span class="fc" id="L45">        return solicitante;</span>
+    }
+
+    public void setSolicitante(String solicitante) {
+<span class="fc" id="L49">        this.solicitante = solicitante;</span>
+<span class="fc" id="L50">    }</span>
+
+    public LocalDateTime getInicio() {
+<span class="fc" id="L53">        return inicio;</span>
+    }
+
+    public void setInicio(LocalDateTime inicio) {
+<span class="fc" id="L57">        this.inicio = inicio;</span>
+<span class="fc" id="L58">    }</span>
+
+    public LocalDateTime getFim() {
+<span class="fc" id="L61">        return fim;</span>
+    }
+
+    public void setFim(LocalDateTime fim) {
+<span class="fc" id="L65">        this.fim = fim;</span>
+<span class="fc" id="L66">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

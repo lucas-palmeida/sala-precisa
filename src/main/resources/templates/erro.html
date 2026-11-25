@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos :: cabecalho('Erro')}"></head>
+<body>
+<header th:replace="~{fragmentos :: menu}"></header>
+<main>
+    <h1>Não foi possível concluir a operação</h1>
+    <p id="mensagem-erro" class="alerta erro" th:text="${mensagem}">Mensagem de erro</p>
+    <a th:href="@{/salas}">Voltar para a lista de salas</a>
+</main>
+</body>
+</html>

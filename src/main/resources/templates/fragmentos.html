@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="cabecalho(titulo)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${titulo} + ' | SalaPrecisa'">SalaPrecisa</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+
+<header th:fragment="menu" class="topo">
+    <nav>
+        <a class="marca" th:href="@{/salas}">SalaPrecisa</a>
+        <a id="menu-salas" th:href="@{/salas}">Salas</a>
+        <a id="menu-reservas" th:href="@{/reservas}">Reservas</a>
+        <a id="menu-nova-reserva" th:href="@{/reservas/nova}">Nova reserva</a>
+    </nav>
+</header>
+
+<div th:fragment="mensagens">
+    <p id="mensagem-sucesso" class="alerta sucesso" th:if="${sucesso}" th:text="${sucesso}"></p>
+    <p id="mensagem-erro" class="alerta erro" th:if="${erro}" th:text="${erro}"></p>
+</div>
+
+</body>
+</html>
