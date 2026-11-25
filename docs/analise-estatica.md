@@ -45,7 +45,8 @@ Arquivos de configuração:
 ./mvnw compile pmd:pmd pmd:cpd checkstyle:checkstyle
 ```
 
-No Windows, utilize `.\mvnw.cmd` (PowerShell) ou `mvnw.cmd` (Prompt de Comando) no lugar de `./mvnw`.
+Os comandos acima são os do Linux e do macOS. No Windows, utilize `.\mvnw.cmd`
+(PowerShell) ou `mvnw.cmd` (Prompt de Comando) no lugar de `./mvnw`.
 
 ## 3. Conjunto de regras
 

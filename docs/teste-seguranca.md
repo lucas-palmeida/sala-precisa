@@ -55,7 +55,7 @@ processo seguiu três passos:
 |---|---|---|---|
 | `seguranca/SegurancaApiIT` | JUnit 5 + RestAssured (requisições HTTP à aplicação real) | `mvnw verify` | 26 |
 | `seguranca/SegurancaWebIT` | JUnit 5 + RestAssured (inspeção do HTML e dos cabeçalhos) | `mvnw verify` | 9 |
-| `seguranca/XssNavegadorSistemaIT` | JUnit 5 + Selenium (Microsoft Edge real) | `mvnw verify -Psistema` | 1 |
+| `seguranca/XssNavegadorSistemaIT` | JUnit 5 + Selenium (navegador real: Edge no Windows, Chrome no Linux/macOS) | `mvnw verify -Psistema` | 1 |
 | Inspeção manual | `curl` | linha de comando | — |
 
 Os testes com navegador verificam algo que a simples inspeção do HTML não garante:
@@ -283,7 +283,8 @@ tela gerada automaticamente nessa falha do teste está em
 ./mvnw -Psistema verify "-Dit.test=Seguranca*IT,XssNavegador*IT"
 ```
 
-No Windows, utilize `.\mvnw.cmd` (PowerShell) ou `mvnw.cmd` (Prompt de Comando) no lugar de `./mvnw`.
+Os comandos acima são os do Linux e do macOS. No Windows, utilize `.\mvnw.cmd`
+(PowerShell) ou `mvnw.cmd` (Prompt de Comando) no lugar de `./mvnw`.
 
 ## 8. Limitações e trabalhos futuros
 

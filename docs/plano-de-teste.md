@@ -80,7 +80,7 @@ API (api)  ──┘          ▲
 | Autenticação e autorização | O sistema não possui controle de acesso. Fora do escopo definido na Etapa 1 (ver `docs/teste-seguranca.md`, achado SEG-05) |
 | Desempenho e carga | Atividade extra opcional não escolhida para este trabalho |
 | Usabilidade e acessibilidade | Exigiriam avaliação com usuários reais. A interface é simples e funcional |
-| Compatibilidade entre navegadores | Os testes de sistema rodam no Microsoft Edge. Chrome e Firefox são suportados pelo código de teste, mas não foram executados sistematicamente |
+| Compatibilidade entre navegadores | A execução local registrada usou o Microsoft Edge. Na integração contínua, os testes de sistema rodam no Google Chrome (Linux e macOS) e no Edge (Windows). O Firefox é suportado pelo código de teste, mas não é executado sistematicamente |
 | Concorrência (reservas simultâneas do mesmo horário) | Exigiria infraestrutura de teste específica. O risco está registrado (R11) |
 | Banco de dados de produção | O sistema usa H2 em memória, conforme definido na Etapa 1 |
 | Código gerado ou de infraestrutura (classe `main`, configuração do Maven) | Sem lógica de negócio |
@@ -142,8 +142,10 @@ topo. A análise estática atua antes da execução, sobre o código-fonte.
 
 - **Objetivo:** validar o sistema do ponto de vista do usuário final, operando as telas em
   um navegador real.
-- **Ferramenta:** Selenium WebDriver 4, com o Microsoft Edge em modo *headless*. O driver
-  do navegador é obtido automaticamente pelo Selenium Manager.
+- **Ferramenta:** Selenium WebDriver 4, em modo *headless*. O navegador é escolhido
+  conforme o sistema operacional: Microsoft Edge no Windows e Google Chrome no Linux e no
+  macOS. Outro pode ser escolhido com `-Dnavegador`. O driver do navegador é obtido
+  automaticamente pelo Selenium Manager.
 - **Organização:** padrão **Page Object**, com uma classe por tela. A localização dos
   elementos HTML fica concentrada nessas classes e os testes descrevem ações do usuário.
 - **Ambiente:** a aplicação completa é iniciada em porta aleatória.
@@ -180,7 +182,8 @@ topo. A análise estática atua antes da execução, sobre o código-fonte.
 
 1. Requisitos e escopo definidos e validados (Etapa 1 entregue ao professor).
 2. Ambiente disponível: JDK 17 instalado e acesso à internet para o *download* das
-   dependências pelo Maven Wrapper. Para os testes de sistema, também o Microsoft Edge.
+   dependências pelo Maven Wrapper. Para os testes de sistema, também um navegador:
+   Microsoft Edge (Windows) ou Google Chrome (Linux e macOS).
 3. Código da etapa compilando sem erros (`mvnw compile`).
 4. Build da etapa anterior verde (`mvnw verify` com sucesso), para que cada nova etapa
    parta de uma base estável.
@@ -218,6 +221,7 @@ após a correção, com a reexecução completa do build (`mvnw clean verify`).
 | R09 | Falsos positivos da análise estática gerando correções desnecessárias | Média | Baixo | Ajuste justificado do conjunto de regras; supressões pontuais com `@SuppressWarnings` comentado |
 | R10 | Ausência de controle de acesso no produto | Certa | Alto (em produção) | Registrado como achado SEG-05 e risco aceito, com recomendação de Spring Security |
 | R11 | Condição de corrida entre reservas simultâneas do mesmo horário | Baixa | Médio | Fora do escopo dos testes. Registrado em `teste-seguranca.md` com sugestão de bloqueio pessimista |
+| R12 | Falha ao executar em sistema operacional diferente do usado no desenvolvimento (Linux, macOS) | Média | Alto | Maven Wrapper multiplataforma; quebra de linha LF garantida para o `mvnw` (`.gitattributes`) e permissão de execução registrada no Git; navegador escolhido conforme o sistema; instruções por sistema no README; integração contínua executando o build completo em Ubuntu, macOS e Windows |
 
 ## 6. Cronograma
 
@@ -245,6 +249,9 @@ iniciada após o build da anterior estar verde (critério de entrada 4).
 
 ### 7.1 Ambiente de execução
 
+O projeto é multiplataforma: Linux, macOS e Windows. A execução local registrada nos
+relatórios de `docs/relatorios/` foi feita no seguinte ambiente:
+
 | Item | Versão / configuração |
 |---|---|
 | Sistema operacional | Windows 11 Home (10.0.26300) |
@@ -253,8 +260,18 @@ iniciada após o build da anterior estar verde (critério de entrada 4).
 | Navegador (testes de sistema) | Microsoft Edge 158.0.4370.33, em modo *headless* |
 | Banco de dados | H2 2.4.240, em memória |
 
-Requisitos de hardware: qualquer computador capaz de executar o JDK 17 e o Microsoft
-Edge. O build completo foi executado em poucos minutos em um computador pessoal comum.
+Além disso, a **integração contínua** (GitHub Actions, `.github/workflows/build.yml`)
+executa o build completo com os testes de sistema a cada *push* nos seguintes ambientes:
+
+| Máquina do GitHub Actions | JDK | Navegador |
+|---|---|---|
+| `ubuntu-latest` (Linux) | Eclipse Temurin 17 | Google Chrome |
+| `macos-latest` (macOS) | Eclipse Temurin 17 | Google Chrome |
+| `windows-latest` (Windows) | Eclipse Temurin 17 | Microsoft Edge |
+
+Requisitos de hardware: qualquer computador capaz de executar o JDK 17 e um navegador
+moderno. O build completo foi executado em poucos minutos em um computador pessoal comum.
+As instruções de instalação para cada sistema estão no `README.md`.
 
 ### 7.2 Sistema sob teste
 
@@ -283,6 +300,7 @@ Edge. O build completo foi executado em poucos minutos em um computador pessoal 
 | Análise estática | PMD / CPD | 7.17.0 (plugin 3.28.0) |
 | Análise estática | Checkstyle | 12.3.1 (plugin 3.6.0) |
 | Inspeção manual de segurança | curl (distribuído com o Git for Windows) | 8.23.0 |
+| Integração contínua | GitHub Actions (`actions/checkout`, `actions/setup-java`, `actions/upload-artifact`) | v7 / v6 / v7 |
 
 ## 8. Matriz de rastreabilidade
 
@@ -356,18 +374,22 @@ build (regressão).
 # Build padrão: análise estática + testes unitários + componente + segurança + cobertura
 ./mvnw clean verify
 
-# Build completo, incluindo os testes de sistema no navegador (Microsoft Edge, headless)
+# Build completo, incluindo os testes de sistema no navegador
+# (Chrome no Linux e no macOS, Edge no Windows; headless)
 ./mvnw clean verify -Psistema
 
-# Testes de sistema com a janela do navegador visível, ou em outro navegador
+# Testes de sistema com a janela do navegador visível, ou em um navegador específico
 ./mvnw verify -Psistema -Dheadless=false
-./mvnw verify -Psistema -Dnavegador=chrome
+./mvnw verify -Psistema -Dnavegador=firefox
 
 # Apenas os relatórios de análise estática (target/reports)
 ./mvnw compile pmd:pmd pmd:cpd checkstyle:checkstyle
 ```
 
-No Windows, utilize `.\mvnw.cmd` (PowerShell) ou `mvnw.cmd` (Prompt de Comando) no lugar de `./mvnw`. Os relatórios gerados ficam em
+Os comandos acima são os do Linux e do macOS (no Linux/macOS, se `./mvnw` responder
+"Permission denied", execute `chmod +x mvnw`). No Windows, utilize `.\mvnw.cmd`
+(PowerShell) ou `mvnw.cmd` (Prompt de Comando) no lugar de `./mvnw`. A instalação do JDK
+em cada sistema está descrita no `README.md`. Os relatórios gerados ficam em
 `target/site/jacoco*`, `target/surefire-reports`, `target/failsafe-reports` e
 `target/reports`.
 

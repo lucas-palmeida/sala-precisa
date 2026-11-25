@@ -12,7 +12,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 /**
  * Cria o {@link WebDriver} conforme as propriedades de sistema:
  * <ul>
- *   <li>{@code navegador}: {@code edge} (padrão), {@code chrome} ou {@code firefox};</li>
+ *   <li>{@code navegador}: {@code auto} (padrão), {@code edge}, {@code chrome} ou {@code firefox}.
+ *       Em {@code auto}, usa o Microsoft Edge no Windows e o Google Chrome no Linux e no macOS;</li>
  *   <li>{@code headless}: {@code true} (padrão) executa sem abrir janela.</li>
  * </ul>
  * O driver do navegador (msedgedriver, chromedriver, geckodriver) é obtido automaticamente
@@ -26,7 +27,10 @@ public final class FabricaNavegador {
     }
 
     public static WebDriver criar() {
-        String navegador = System.getProperty("navegador", "edge").toLowerCase(Locale.ROOT);
+        String navegador = System.getProperty("navegador", "auto").toLowerCase(Locale.ROOT);
+        if ("auto".equals(navegador)) {
+            navegador = navegadorPadraoDoSistema();
+        }
         boolean headless = Boolean.parseBoolean(System.getProperty("headless", "true"));
         return switch (navegador) {
             case "chrome" -> {
@@ -54,5 +58,15 @@ public final class FabricaNavegador {
                 yield new EdgeDriver(opcoes);
             }
         };
+    }
+
+    /**
+     * Navegador usado quando nenhum é informado: o Edge acompanha o Windows; no Linux e no
+     * macOS o Chrome é o mais comum (e, se não estiver instalado, o Selenium Manager baixa
+     * automaticamente uma versão própria para testes, o Chrome for Testing).
+     */
+    static String navegadorPadraoDoSistema() {
+        String sistema = System.getProperty("os.name", "").toLowerCase(Locale.ROOT);
+        return sistema.contains("win") ? "edge" : "chrome";
     }
 }

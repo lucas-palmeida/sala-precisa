@@ -43,10 +43,11 @@
 		<!--
 		  Testes de sistema (Selenium, classes *SistemaIT.java): excluídos do build padrão
 		  para que ele não dependa de navegador. Executados com: mvnw verify -Psistema
-		  Navegador: -Dnavegador=edge|chrome|firefox (padrão: edge); -Dheadless=false exibe a janela.
+		  Navegador: -Dnavegador=auto|edge|chrome|firefox (padrão: auto = Edge no Windows,
+		  Chrome no Linux e no macOS); -Dheadless=false exibe a janela.
 		-->
 		<testes.sistema.exclusao>**/*SistemaIT.java</testes.sistema.exclusao>
-		<navegador>edge</navegador>
+		<navegador>auto</navegador>
 		<headless>true</headless>
 	</properties>
 	<dependencies>
