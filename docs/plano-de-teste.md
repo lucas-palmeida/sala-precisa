@@ -239,10 +239,10 @@ iniciada após o build da anterior estar verde (critério de entrada 4).
 | 7 | Testes de sistema (Selenium) | 22/11/2026 | 22/11/2026 | Concluída |
 | 8 | Testes de segurança (extra) e correções | 22/11/2026 | 22/11/2026 | Concluída |
 | 9 | Plano de teste e documentação final | 22/11/2026 | 22/11/2026 | Concluída |
-| 10 | Revisão do plano e dos documentos pelo autor | 23/11/2026 | | Pendente |
-| 11 | Criação do repositório Git remoto e publicação | 24/11/2026 | | Pendente |
-| 12 | Verificação final em cópia limpa do repositório (`mvnw clean verify -Psistema`) | 25/11/2026 | | Pendente |
-| 13 | Entrega antecipada | 26/11/2026 | | Pendente |
+| 10 | Revisão do plano e dos documentos pelo autor | 23/11/2026 | 25/11/2026 | Concluída |
+| 11 | Criação do repositório Git remoto e publicação | 24/11/2026 | 25/11/2026 | Concluída |
+| 12 | Verificação final em cópia limpa do repositório (`mvnw clean verify -Psistema`), pela integração contínua em Ubuntu, macOS e Windows | 25/11/2026 | 25/11/2026 | Concluída |
+| 13 | Entrega antecipada | 26/11/2026 | 25/11/2026 | Concluída |
 | — | **Prazo final de entrega** | **27/11/2026** | | — |
 
 ## 7. Ambiente e ferramentas
@@ -416,7 +416,26 @@ Execução final em 22/11/2026, com o comando `mvnw clean verify -Psistema`:
 | CPD | 0 | 0 |
 | Checkstyle | 3 | 0 |
 
-**Defeitos e achados:**
+### 11.1 Execução na integração contínua (Linux, macOS e Windows)
+
+Em 25/11/2026, o mesmo build completo (`./mvnw -B clean verify -Psistema`) foi executado
+pelo GitHub Actions a partir de uma cópia limpa do repositório, nos três sistemas
+operacionais. Os dados abaixo foram extraídos dos relatórios publicados como artefatos de
+cada execução:
+
+| Sistema | JDK | Navegador (escolhido automaticamente) | Unitários | Integração (componente, segurança e sistema) | Falhas / erros / pulados | Cobertura (linhas / ramos) |
+|---|---|---|---|---|---|---|
+| Linux (`ubuntu-latest`, kernel 7.0.0) | Temurin 17.0.21 | Google Chrome 157.0.8103.78 | 91 aprovados | 140 aprovados | 0 / 0 / 0 | 98,8 % / 98,4 % |
+| macOS 26.7.2 (`macos-latest`) | Temurin 17.0.21.1 | Google Chrome 157.0.8103.79 | 91 aprovados | 140 aprovados | 0 / 0 / 0 | 98,8 % / 98,4 % |
+| Windows Server 2025 (`windows-latest`) | Temurin 17.0.21 | Microsoft Edge 157.0.4341.60 | 91 aprovados | 140 aprovados | 0 / 0 / 0 | 98,8 % / 98,4 % |
+
+Os resultados são idênticos aos da execução local, o que confirma que o sistema e os
+testes são independentes do sistema operacional, do navegador e do idioma do navegador.
+No macOS, por exemplo, os campos de data foram exibidos no formato americano
+(mês/dia/ano), e os testes de sistema foram aprovados da mesma forma.
+
+### 11.2 Defeitos e achados
+
 - **Análise estática:** 12 apontamentos, sendo 6 corrigidos e 6 justificados.
 - **Segurança:** 8 achados, sendo 4 vulnerabilidades corrigidas, 3 riscos aceitos ou
   recomendações e 1 registrado.
@@ -425,5 +444,6 @@ Execução final em 22/11/2026, com o comando `mvnw clean verify -Psistema`:
   e as regras de borda (adjacência, limites de duração e de capacidade) foram tratadas
   desde a implementação.
 
-**Situação dos critérios de saída:** CS1 a CS7 atendidos. As etapas pendentes do
-cronograma (seção 6) referem-se à revisão, à publicação e à entrega.
+**Situação dos critérios de saída:** CS1 a CS7 atendidos, tanto na execução local quanto
+nos três sistemas da integração contínua. Todas as etapas do cronograma (seção 6) foram
+concluídas, com a entrega realizada antes do prazo final.
